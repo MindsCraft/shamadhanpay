@@ -1,0 +1,754 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Components & Utilities */
+@layer components {
+    /* Button Link Component */
+    .btn-link {
+        @apply inline-flex items-center gap-2 font-semibold transition-colors;
+        font-size: 18px;
+        text-decoration: none;
+        color: #424143; /* Primary dark color (text-primary) */
+    }
+
+    .btn-link:hover {
+        color: #6373AD; /* Primary blue color */
+        text-decoration: underline;
+    }
+
+    /* Text Color Utilities - Based on Style Guide */
+
+    /* Primary Text Colors */
+    .text-primary {
+        color: #424143 !important; /* Logo text color - main headings & body */
+    }
+
+    .text-secondary {
+        color: #6B7280 !important; /* Gray-600 - secondary text, descriptions */
+    }
+
+    .text-tertiary {
+        color: #9CA3AF !important; /* Gray-400 - subtle text, placeholders */
+    }
+
+    .text-inverse {
+        color: #FFFFFF !important; /* White - text on dark backgrounds */
+    }
+
+    /* Brand Text Colors */
+    .text-brand-primary {
+        color: #6373AD !important; /* Primary blue */
+    }
+
+    .text-brand-secondary {
+        color: #44AA99 !important; /* Teal */
+    }
+
+    .text-brand-accent {
+        color: #A1609D !important; /* Purple */
+    }
+
+    .text-brand-warning {
+        color: #EA9E51 !important; /* Orange */
+    }
+
+    /* Semantic Text Colors */
+    .text-success {
+        color: #22C55E !important; /* Green - success messages */
+    }
+
+    .text-error {
+        color: #EF4444 !important; /* Red - error messages */
+    }
+
+    .text-warning {
+        color: #F59E0B !important; /* Yellow - warning messages */
+    }
+
+    .text-info {
+        color: #3B82F6 !important; /* Blue - info messages */
+    }
+
+    /* Grayscale Text Colors */
+    .text-gray-50 {
+        color: #F9FAFB !important;
+    }
+
+    .text-gray-100 {
+        color: #F3F4F6 !important;
+    }
+
+    .text-gray-200 {
+        color: #E5E7EB !important;
+    }
+
+    .text-gray-300 {
+        color: #D1D5DB !important;
+    }
+
+    .text-gray-400 {
+        color: #9CA3AF !important;
+    }
+
+    .text-gray-500 {
+        color: #6B7280 !important;
+    }
+
+    .text-gray-600 {
+        color: #4B5563 !important;
+    }
+
+    .text-gray-700 {
+        color: #374151 !important;
+    }
+
+    .text-gray-800 {
+        color: #1F2937 !important;
+    }
+
+    .text-gray-900 {
+        color: #111827 !important;
+    }
+
+    /* Background Color Utilities - Based on Style Guide */
+
+    /* Primary Background Colors */
+    .bg-primary {
+        background-color: #FFFFFF !important; /* White - main page background */
+    }
+
+    .bg-secondary {
+        background-color: #F9FAFB !important; /* Very light gray - alternate sections */
+    }
+
+    .bg-tertiary {
+        background-color: #F3F4F6 !important; /* Light gray - cards, panels */
+    }
+
+    .bg-dark {
+        background-color: #424143 !important; /* Dark - footers, dark sections */
+    }
+
+    /* Brand Background Colors */
+    .bg-brand-primary {
+        background-color: #6373AD !important; /* Primary blue */
+    }
+
+    .bg-brand-primary-dark {
+        background-color: #556299 !important; /* Darker blue for hover */
+    }
+
+    .bg-brand-secondary {
+        background-color: #44AA99 !important; /* Teal */
+    }
+
+    .bg-brand-secondary-dark {
+        background-color: #3A9688 !important; /* Darker teal for hover */
+    }
+
+    .bg-brand-accent {
+        background-color: #A1609D !important; /* Purple */
+    }
+
+    .bg-brand-warning {
+        background-color: #EA9E51 !important; /* Orange */
+    }
+
+    .bg-brand-light {
+        background-color: #F8F9FA !important; /* Light background */
+    }
+
+    /* Semantic Background Colors */
+    .bg-success {
+        background-color: #22C55E !important; /* Green */
+    }
+
+    .bg-success-light {
+        background-color: #DCFCE7 !important; /* Light green */
+    }
+
+    .bg-error {
+        background-color: #EF4444 !important; /* Red */
+    }
+
+    .bg-error-light {
+        background-color: #FEE2E2 !important; /* Light red */
+    }
+
+    .bg-warning {
+        background-color: #F59E0B !important; /* Yellow */
+    }
+
+    .bg-warning-light {
+        background-color: #FEF3C7 !important; /* Light yellow */
+    }
+
+    .bg-info {
+        background-color: #3B82F6 !important; /* Blue */
+    }
+
+    .bg-info-light {
+        background-color: #DBEAFE !important; /* Light blue */
+    }
+
+    /* Grayscale Background Colors */
+    .bg-gray-50 {
+        background-color: #F9FAFB !important;
+    }
+
+    .bg-gray-100 {
+        background-color: #F3F4F6 !important;
+    }
+
+    .bg-gray-200 {
+        background-color: #E5E7EB !important;
+    }
+
+    .bg-gray-300 {
+        background-color: #D1D5DB !important;
+    }
+
+    .bg-gray-400 {
+        background-color: #9CA3AF !important;
+    }
+
+    .bg-gray-500 {
+        background-color: #6B7280 !important;
+    }
+
+    .bg-gray-600 {
+        background-color: #4B5563 !important;
+    }
+
+    .bg-gray-700 {
+        background-color: #374151 !important;
+    }
+
+    .bg-gray-800 {
+        background-color: #1F2937 !important;
+    }
+
+    .bg-gray-900 {
+        background-color: #111827 !important;
+    }
+
+    /* Brand Tinted Backgrounds (from style guide) */
+    .bg-blue-tint {
+        background-color: #F4F6FB !important; /* Primary blue 50 - subtle blue sections */
+    }
+
+    .bg-teal-tint {
+        background-color: #F0F9F7 !important; /* Secondary teal 50 - subtle teal sections */
+    }
+
+    .bg-purple-tint {
+        background-color: #F9F4F8 !important; /* Accent purple 50 - subtle purple sections */
+    }
+
+    .bg-orange-tint {
+        background-color: #FEF8F0 !important; /* Accent orange 50 - subtle orange sections */
+    }
+
+    /* Simple Background Colors (already in Tailwind config but adding for consistency) */
+    .bg-white {
+        background-color: #FFFFFF !important;
+    }
+
+    .bg-grey-1 {
+        background-color: #F9FAFB !important;
+    }
+
+    .bg-grey-2 {
+        background-color: #F3F4F6 !important;
+    }
+
+    .bg-grey-3 {
+        background-color: #E5E7EB !important;
+    }
+
+    .bg-grey-4 {
+        background-color: #D1D5DB !important;
+    }
+
+    .bg-grey-5 {
+        background-color: #9CA3AF !important;
+    }
+
+    .bg-grey-6 {
+        background-color: #6B7280 !important;
+    }
+}
+
+html,
+body {
+    @apply text-gray-800 font-Inter
+}
+
+/* Apply Inter Tight to all headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter Tight', sans-serif;
+    color: #424143;
+}
+
+/* H1 / Page Header Styling */
+h1 {
+    font-size: 80px;
+    font-weight: 700;
+    letter-spacing: 0; /* -4% */
+    line-height: 110%;
+}
+
+/* Responsive H1 for smaller screens */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 56px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 32px;
+    }
+}
+
+/* H2 Styling */
+h2 {
+    font-size: 56px;
+    font-weight: 600;
+    letter-spacing: -0.02em; /* -4% */
+    line-height: 110%;
+}
+
+/* Responsive H2 for smaller screens */
+@media (max-width: 1024px) {
+    h2 {
+        font-size: 44px;
+    }
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 24px;
+    }
+}
+
+/* H3 Styling */
+h3 {
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: -0.02em; /* -2% */
+    line-height: 110%;
+}
+
+@media (max-width: 768px) {
+    h3 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    h3 {
+        font-size: 24px;
+    }
+}
+
+/* H4 Styling */
+h4 {
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -0.01em; /* -1% */
+    line-height: 110%;
+}
+
+@media (max-width: 768px) {
+    h4 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    h4 {
+        font-size: 20px;
+    }
+}
+
+/* H5 Styling */
+h5 {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.01em; /* -1% */
+    line-height: 130%;
+}
+
+@media (max-width: 768px) {
+    h5 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h5 {
+        font-size: 18px;
+    }
+}
+
+/* H6 Styling */
+h6 {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 140%;
+}
+
+@media (max-width: 768px) {
+    h6 {
+        font-size: 16px;
+    }
+}
+
+/* Paragraph after header styling */
+h1 + p,
+h2 + p {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.container {
+    max-width: 1300px;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .container {
+        max-width: calc(100% - 32px);
+    }
+}
+
+section {
+    padding: 80px 0;
+}
+
+.clamp-1 {
+    display: -webkit-box !important;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.clamp-2 {
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.arrowPlus {
+    @apply relative p-[0.4rem]
+}
+
+.arrowPlus span {
+    transition: .5s;
+    @apply inline-block w-[20px] h-[1px] bg-Mbrand400 absolute
+}
+
+.arrowPlus span:nth-child(1) {
+    @apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+}
+
+.arrowPlus span:nth-child(2) {
+    @apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-[90deg]
+}
+
+.arrowPlus.active span {
+    @apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-[0]
+}
+
+
+.barIcon {
+    @apply flex flex-wrap gap-1
+}
+
+.barIcon div {
+    @apply w-full h-[2px] inline-block rounded-sm transition-all duration-500
+}
+
+.barIcon div {
+    @apply w-full h-[2px] inline-block rounded-sm transition-all duration-500
+}
+
+.barIcon.active div:nth-child(1) {
+    @apply absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 rotate-45
+}
+
+.barIcon.active div:nth-child(2) {
+    @apply hidden
+}
+
+.barIcon.active div:nth-child(3) {
+    @apply absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 -rotate-45
+}
+
+.tabelStyle thead tr th {
+    @apply p-4 border !border-[#EAECF0]
+}
+
+.tabelStyle tbody tr th {
+    @apply p-4 border !border-[#EAECF0]
+}
+
+.tabelStyle tbody tr td {
+    @apply p-4 border !border-[#EAECF0]
+}
+
+.navbarStyle {
+    transition: all 0.5s ease-in-out;
+}
+
+/* Ensure the following properties are transitioned smoothly */
+.navbarStyle.fixed {
+    position: fixed;
+    top: 2vh;
+}
+
+.navbarStyle.relative {
+    position: relative;
+    top: 0;
+}
+
+.searchWrap {
+    @apply md:w-auto md:h-auto w-[46px] h-[46px] md:hover:w-auto md:hover:h-auto transition-all duration-300
+}
+
+.searchWrap:hover input {
+    @apply max-w-full
+}
+
+.searchWrap input {
+    @apply md:max-w-full max-w-0 overflow-hidden
+}
+
+.custom-bar path {
+    transition: fill 0.3s ease;
+}
+
+.custom-bar path:hover {
+    fill: #46A59F !important;
+}
+
+.arrowWrap:hover div div .arrows {
+    @apply !-right-[100%]
+}
+
+.wrapCaradHover{
+    @apply transition-all duration-300 translate-x-[5rem] xx:translate-x-[4rem] ss:translate-x-[3rem] sm:translate-x-0
+}
+
+.cardGrid:hover .wrapCaradHover{
+    @apply -translate-x-[5rem] xx:-translate-x-[4rem] ss:-translate-x-[3rem] sm:translate-x-0
+}
+
+.hoverCard.one {
+    @apply scale-[1.1] -translate-x-[5px]
+}
+
+.hoverCard.one .cardHover {
+    fill: #2B7979 !important;
+}
+
+.hoverCard.two {
+    @apply scale-[1.1] translate-x-[5px]
+}
+
+.hoverCard.two .cardHover {
+    fill: #FF7438 !important;
+}
+
+.cardGrid:hover .imgCoverBg {
+    @apply !opacity-100
+}
+
+.MenuHover:hover .square.one {
+    @apply !bg-Mbrand500
+}
+.MenuHover:hover .square.two {
+    @apply !bg-Msecondary600
+}
+.MenuHover:hover .square.three {
+    @apply !bg-Mwarning500
+}
+
+.MenuHover:hover .square .icon {
+    @apply top-[15%] !rotate-0
+}
+.MenuHover:hover .square .mockup {
+    @apply translate-y-[5rem]
+}
+/* R
+otating Gradient Border Animation */
+@keyframes rotateGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.gradient-border-rotate {
+    background: linear-gradient(135deg, #44AA99, #6373AD, #A1609D, #EA9E51, #44AA99, #6373AD);
+    background-size: 300% 300%;
+    animation: rotateGradient 6s ease infinite;
+}
+
+/* Alternative circular rotation effect */
+@keyframes spinGradient {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.gradient-border-spin::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: conic-gradient(from 0deg, #44AA99, #6373AD, #A1609D, #EA9E51, #44AA99);
+    animation: spinGradient 8s linear infinite;
+    z-index: -1;
+}
+
+/* Oscillating Gradient Animation - Swings back and forth 15 degrees */
+@keyframes oscillateGradient {
+    0% {
+        transform: rotate(-15deg);
+    }
+    50% {
+        transform: rotate(15deg);
+    }
+    100% {
+        transform: rotate(-15deg);
+    }
+}
+
+/* Infinite Scroll Animation for Bank Logos */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+
+/* Hide scrollbar for Apple-style slider */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.sec-card {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-start;
+    border-bottom: 1px solid #F3F4F6;
+    padding-bottom: 1.5rem;
+}
+
+.sec-card:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+.sec-card .security-icon {
+    display: inline-flex;
+    margin-bottom: 8px;
+    gap: 6px;
+    padding: 4px 12px 4px 4px;
+    align-items: center;
+    border-radius: 6px;
+}
+.sec-card .security-icon img {
+    /*padding: 4px;*/
+    /*background: white;*/
+    /*border-radius: 4px;*/
+}
+.sec-card h6 {
+    font-size: 16px;
+}
+.sec-card p {}
+
+.campaign .swiper {
+    overflow: visible !important;
+}
+
+.campaign-card {
+    /*box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.02), 0 8px 16px -8px rgba(0, 0, 0, 0.1);*/
+}
+
+.campaign-overlay {
+    max-width: unset;
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    padding: 2rem 3rem;
+    backdrop-filter: blur(3px);
+    background-image: linear-gradient(0deg, #0000000d, #00000000);
+    overflow: hidden;
+    border-radius: 6px;
+}
+.campaign-overlay h3, .campaign-overlay p {
+    color: #fff;
+    text-shadow: 0 0 25px #00000036;
+}
+
+.blog-card {
+    background: #F3F4F6;
+    border-radius: 12px;
+    padding: 8px;
+}

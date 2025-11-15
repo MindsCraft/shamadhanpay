@@ -1,0 +1,52 @@
+<svg width="1440" height="980" viewBox="0 0 1440 980" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="path-1-inside-1_251_3128" fill="white">
+<path d="M188 0H395V980H188V0Z"/>
+</mask>
+<path d="M394.135 0V980H395.865V0H394.135ZM188.865 980V0H187.135V980H188.865Z" fill="#E5E5E5" mask="url(#path-1-inside-1_251_3128)"/>
+<mask id="path-3-inside-2_251_3128" fill="white">
+<path d="M395 0H612V980H395V0Z"/>
+</mask>
+<path d="M611.135 0V980H612.865V0H611.135Z" fill="#E5E5E5" mask="url(#path-3-inside-2_251_3128)"/>
+<mask id="path-5-inside-3_251_3128" fill="white">
+<path d="M612 0H828V980H612V0Z"/>
+</mask>
+<path d="M827.135 0V980H828.865V0H827.135Z" fill="#E5E5E5" mask="url(#path-5-inside-3_251_3128)"/>
+<mask id="path-7-inside-4_251_3128" fill="white">
+<path d="M828 0H1045V980H828V0Z"/>
+</mask>
+<path d="M1044.13 0V980H1045.87V0H1044.13Z" fill="#E5E5E5" mask="url(#path-7-inside-4_251_3128)"/>
+<mask id="path-9-inside-5_251_3128" fill="white">
+<path d="M1045 0H1252V980H1045V0Z"/>
+</mask>
+<path d="M1251.13 0V980H1252.87V0H1251.13Z" fill="#E5E5E5" mask="url(#path-9-inside-5_251_3128)"/>
+<mask id="path-11-inside-6_251_3128" fill="white">
+<path d="M188 1014L188 807L1252 807L1252 1014L188 1014Z"/>
+</mask>
+<path d="M188 807.865L1252 807.865L1252 806.135L188 806.135L188 807.865ZM1252 1013.13L188 1013.14L188 1014.86L1252 1014.86L1252 1013.13Z" fill="#E5E5E5" mask="url(#path-11-inside-6_251_3128)"/>
+<mask id="path-13-inside-7_251_3128" fill="white">
+<path d="M188 807L188 590L1252 590L1252 807L188 807Z"/>
+</mask>
+<path d="M188 590.865L1252 590.865L1252 589.135L188 589.135L188 590.865Z" fill="#E5E5E5" mask="url(#path-13-inside-7_251_3128)"/>
+<mask id="path-15-inside-8_251_3128" fill="white">
+<path d="M188 590L188 374L1252 374L1252 590L188 590Z"/>
+</mask>
+<path d="M188 374.865L1252 374.865L1252 373.135L188 373.135L188 374.865Z" fill="#E5E5E5" mask="url(#path-15-inside-8_251_3128)"/>
+<mask id="path-17-inside-9_251_3128" fill="white">
+<path d="M188 374L188 157L1252 157L1252 374L188 374Z"/>
+</mask>
+<path d="M188 157.865L1252 157.865L1252 156.135L188 156.135L188 157.865Z" fill="#E5E5E5" mask="url(#path-17-inside-9_251_3128)"/>
+<mask id="path-19-inside-10_251_3128" fill="white">
+<path d="M188 157L188 -50L1252 -50L1252 157L188 157Z"/>
+</mask>
+<path d="M188 -49.1349L1252 -49.135L1252 -50.865L188 -50.865L188 -49.1349Z" fill="#E5E5E5" mask="url(#path-19-inside-10_251_3128)"/>
+<g filter="url(#filter0_f_251_3128)">
+<ellipse cx="719.5" cy="530" rx="697.5" ry="237" fill="#AAF0C7" fill-opacity="0.32"/>
+</g>
+<defs>
+<filter id="filter0_f_251_3128" x="-178" y="93" width="1795" height="874" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_251_3128"/>
+</filter>
+</defs>
+</svg>
