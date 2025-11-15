@@ -287,135 +287,135 @@ body {
 
 /* Apply Inter Tight to all headings */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Inter Tight', sans-serif;
-    color: #424143;
+    font-family: 'Inter Tight', sans-serif !important;
+    color: #424143 !important;
 }
 
 /* H1 / Page Header Styling */
 h1 {
-    font-size: 80px;
-    font-weight: 700;
-    letter-spacing: 0; /* -4% */
-    line-height: 110%;
+    font-size: 80px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important; /* -4% */
+    line-height: 110% !important;
 }
 
 /* Responsive H1 for smaller screens */
 @media (max-width: 1024px) {
     h1 {
-        font-size: 56px;
+        font-size: 56px !important;
     }
 }
 
 @media (max-width: 768px) {
     h1 {
-        font-size: 40px;
+        font-size: 40px !important;
     }
 }
 
 @media (max-width: 480px) {
     h1 {
-        font-size: 32px;
+        font-size: 32px !important;
     }
 }
 
 /* H2 Styling */
 h2 {
-    font-size: 56px;
-    font-weight: 600;
-    letter-spacing: -0.02em; /* -4% */
-    line-height: 110%;
+    font-size: 56px !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.02em !important; /* -4% */
+    line-height: 110% !important;
 }
 
 /* Responsive H2 for smaller screens */
 @media (max-width: 1024px) {
     h2 {
-        font-size: 44px;
+        font-size: 44px !important;
     }
 }
 
 @media (max-width: 768px) {
     h2 {
-        font-size: 32px;
+        font-size: 32px !important;
     }
 }
 
 @media (max-width: 480px) {
     h2 {
-        font-size: 24px;
+        font-size: 24px !important;
     }
 }
 
 /* H3 Styling */
 h3 {
-    font-size: 48px;
-    font-weight: 600;
-    letter-spacing: -0.02em; /* -2% */
-    line-height: 110%;
+    font-size: 48px !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.02em !important; /* -2% */
+    line-height: 110% !important;
 }
 
 @media (max-width: 768px) {
     h3 {
-        font-size: 32px;
+        font-size: 32px !important;
     }
 }
 
 @media (max-width: 480px) {
     h3 {
-        font-size: 24px;
+        font-size: 24px !important;
     }
 }
 
 /* H4 Styling */
 h4 {
-    font-size: 32px;
-    font-weight: 600;
-    letter-spacing: -0.01em; /* -1% */
-    line-height: 110%;
+    font-size: 32px !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.01em !important; /* -1% */
+    line-height: 110% !important;
 }
 
 @media (max-width: 768px) {
     h4 {
-        font-size: 24px;
+        font-size: 24px !important;
     }
 }
 
 @media (max-width: 480px) {
     h4 {
-        font-size: 20px;
+        font-size: 20px !important;
     }
 }
 
 /* H5 Styling */
 h5 {
-    font-size: 24px;
-    font-weight: 600;
-    letter-spacing: -0.01em; /* -1% */
-    line-height: 130%;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.01em !important; /* -1% */
+    line-height: 130% !important;
 }
 
 @media (max-width: 768px) {
     h5 {
-        font-size: 20px;
+        font-size: 20px !important;
     }
 }
 
 @media (max-width: 480px) {
     h5 {
-        font-size: 18px;
+        font-size: 18px !important;
     }
 }
 
 /* H6 Styling */
 h6 {
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: 0;
-    line-height: 140%;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0 !important;
+    line-height: 140% !important;
 }
 
 @media (max-width: 768px) {
     h6 {
-        font-size: 16px;
+        font-size: 16px !important;
     }
 }
 
