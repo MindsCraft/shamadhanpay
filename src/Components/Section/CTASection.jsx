@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react'
 import { Container } from 'react-bootstrap'
-import ActionBtn from '../Button/ActionBtn'
+import Link from 'next/link'
 import useHostname from '../Provider/HostnameProvider';
+import DownloadIcon from '../svg/DownloadIcon';
 
 const CTASection = ({ title = `Get the app and open an <br class="xx:block hidden" /> ⎯ account here`, subtext = `Access your Shamadhan Pay account on <br /> iOS and android.`, type = 1 }) => {
   const originalUrl = useHostname();
@@ -25,8 +26,13 @@ const CTASection = ({ title = `Get the app and open an <br class="xx:block hidde
                   <div className="lg:!-ml-8 mt-[2rem] lg:mt-0 ml-auto">
                     {
                       type == 1 ? <Fragment>
-                        <p className='text__18 leading-relaxed mb-4' dangerouslySetInnerHTML={{ __html: subtext }} />
-                        <ActionBtn title='Download Now' />
+                        <h6 className='mb-4' dangerouslySetInnerHTML={{ __html: subtext }} />
+                        <Link href="/download" className='inline-block rounded-md transition-all duration-300 px-6 py-3 bg-[#6373AD] hover:bg-[#556299]' style={{ boxShadow: '0 4px 16px 0 rgba(99, 115, 173, 0.25)' }}>
+                            <p className="flex items-center gap-2">
+                                <span className='font-semibold text-white'>Download App</span>
+                                <DownloadIcon width={24} height={24} fill="white" />
+                            </p>
+                        </Link>
                       </Fragment> : type == 2 ? <Fragment>
                         <p className='text__18 leading-relaxed mb-4'>Don’t forget to subscribe to our <br className='xl:hidden lg:block hidden' /> newsletter to <br className='xl:block lg:hidden ss:block hidden' /> get the latest updates straight to your inbox. </p>
                         <div className="flex items-center gap-3 justify-between px-4 py-3 rounded-full bg-Mneutral50 border !border-Mneutral200">

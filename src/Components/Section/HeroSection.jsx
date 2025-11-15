@@ -10,8 +10,13 @@ const HeroSection = () => {
 
     return (
         <section className='relative py-[80px] lg:py-[120px] overflow-hidden'>
-            {/* <img src={originalUrl + "/images/Container.svg"} className='absolute w-full h-full object-cover left-1/2 -translate-x-1/2 top-0 pointer-events-none' alt="" /> */}
-            {/*<img src={originalUrl + "/content/hero-bg-blue.svg"} className='absolute w-full h-full object-cover left-1/2 -translate-x-1/2 top-0 pointer-events-none' alt="" />*/}
+            {/* Animated Liquid Blobs Background */}
+            <div className='absolute inset-0 overflow-hidden'>
+                <div className='blob blob-1'></div>
+                <div className='blob blob-2'></div>
+                {/*<div className='blob blob-3'></div>*/}
+            </div>
+
             <Container className='relative z-[1]'>
                 <Row className='items-center min-h-[60vh]'>
                     {/* Left Content */}
@@ -112,7 +117,7 @@ const HeroSection = () => {
                                         <img
                                             src={`${originalUrl}/content/banks/${bank.file}`}
                                             alt={bank.name}
-                                            className='h-8 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300'
+                                            className='h-8 object-contain grayscale hover:grayscale-0 opacity-80 hover:opacity-100 transition-all duration-300'
                                         />
                                     </div>
                                 ))}

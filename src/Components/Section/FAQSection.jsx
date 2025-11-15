@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react'
 import {Col, Container, Row} from 'react-bootstrap'
-import ActionBtn from "@/Components/Button/ActionBtn";
+import Link from 'next/link'
 import AccordionHelp from "@/Components/Accordion/AccordionHelp";
 
 const FAQSection = () => {
@@ -10,13 +10,15 @@ const FAQSection = () => {
             <Container>
               <Row className='gap-y-4'>
                 <Col md={5}>
-                  <h2 className='mb-[2rem] md:mb-[4.5rem]'>Do you need ⎯ <br />
+                  <h2 className='mb-[2rem] md:mb-[3rem]'>Do you need ⎯ <br />
                     some help?</h2>
-
                   <div className="w-full bg-Mneutral900 p-6 rounded-[24px]">
-                    <h5 className='font-medium text__24 text-white mb-[2.5rem]'>Didn't find the answer you were looking for? Our support team is here to help!</h5>
-
-                    <ActionBtn link={"/contact"} title="Contact us" size='small' type={"2"} />
+                    <h5 className='text-white mb-[2.5rem]'>Didn't find the answer you were looking for? Our support team is here to help!</h5>
+                    <Link href="/download" className='inline-block rounded-md transition-all duration-300 px-6 py-3 bg-[#ffff] hover:bg-[#F3F4F6]' style={{ boxShadow: '0 4px 16px 0 rgba(99, 115, 173, 0.25)' }}>
+                      <p className="flex items-center gap-2">
+                        <span className='font-semibold'>Contact Us?</span>
+                      </p>
+                    </Link>
                   </div>
                 </Col>
                 <Col md={7}>

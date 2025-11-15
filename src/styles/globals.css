@@ -726,6 +726,79 @@ otating Gradient Border Animation */
     overflow: visible !important;
 }
 
+/* Liquid Blob Animations for Hero Section */
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.7;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.blob-1 {
+    width: 1000px;
+    height: 820px;
+    background: linear-gradient(123deg, #ffffff 0%, #e6ecff 100%);
+    top: -2%;
+    left: -9%;
+    animation: blob-move-1 20s infinite;
+}
+
+.blob-2 {
+    width: 850px;
+    height: 850px;
+    background: linear-gradient(135deg, #ffffff 0%, #eaefff 100%);
+    top: 0%;
+    right: 8%;
+    animation: blob-move-2 25s infinite;
+}
+
+.blob-3 {
+    width: 1500px;
+    height: 1500px;
+    background: linear-gradient(3deg, #ffffff 0%, #dee6ff 100%);
+    bottom: -85%;
+    left: 18%;
+    animation: blob-move-2 20s infinite;
+}
+
+@keyframes blob-move-1 {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    33% {
+        transform: translate(50px, -50px) scale(1.1);
+    }
+    66% {
+        transform: translate(-30px, 30px) scale(0.9);
+    }
+}
+
+@keyframes blob-move-2 {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    33% {
+        transform: translate(-60px, 40px) scale(1.15);
+    }
+    66% {
+        transform: translate(40px, -40px) scale(0.85);
+    }
+}
+
+@keyframes blob-move-3 {
+    0%, 100% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+    33% {
+        transform: translate(-40px, -60px) scale(1.2) rotate(120deg);
+    }
+    66% {
+        transform: translate(60px, 50px) scale(0.9) rotate(240deg);
+    }
+}
+
 .campaign-card {
     /*box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.02), 0 8px 16px -8px rgba(0, 0, 0, 0.1);*/
 }

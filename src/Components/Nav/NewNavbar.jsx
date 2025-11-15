@@ -57,23 +57,14 @@ const NewNavbar = () => {
 
                             {/* Desktop Navigation Links */}
                             <div className="hidden lg:flex items-center gap-1">
-                                <div className="relative cursor-pointer transition-all duration-300 px-2 py-2 rounded-lg hover:bg-gray-100 hover:text-Mlogo1" onMouseEnter={() => handleMouseEnter("features")} onMouseLeave={handleMouseLeave}>
-                                    <div className="flex items-center gap-2">
-                                        <p className='text__16 font-medium text-gray-900'>Features</p>
-                                        <img src={originalUrl + "/images/Arrow Down.svg"} className={'transition-all duration-300 ' + (ActiveMenu == "features" ? "-rotate-180" : "rotate-0")} alt="" />
-                                    </div>
+                                <div className="relative cursor-pointer transition-all duration-300 px-2 py-2 rounded-lg hover:bg-gray-100 hover:text-Mlogo1">
+                                    <p className='text__16 font-medium text-gray-900'>Features</p>
                                 </div>
-                                <div className="relative cursor-pointer transition-all duration-300 px-2 py-2 rounded-lg hover:bg-gray-100 hover:text-Mlogo1" onMouseEnter={() => handleMouseEnter("resources")} onMouseLeave={handleMouseLeave}>
-                                    <div className="flex items-center gap-2">
-                                        <p className='text__16 font-medium text-gray-900'>Resources</p>
-                                        <img src={originalUrl + "/images/Arrow Down.svg"} className={'transition-all duration-300 ' + (ActiveMenu == "resources" ? "-rotate-180" : "rotate-0")} alt="" />
-                                    </div>
+                                <div className="relative cursor-pointer transition-all duration-300 px-2 py-2 rounded-lg hover:bg-gray-100 hover:text-Mlogo1">
+                                    <p className='text__16 font-medium text-gray-900'>Resources</p>
                                 </div>
-                                <div className="relative cursor-pointer transition-all duration-300 px-2 py-2 rounded-lg hover:bg-gray-100 hover:text-Mlogo1" onMouseEnter={() => handleMouseEnter("company")} onMouseLeave={handleMouseLeave}>
-                                    <div className="flex items-center gap-2">
-                                        <p className='text__16 font-medium text-gray-900'>Company</p>
-                                        <img src={originalUrl + "/images/Arrow Down.svg"} className={'transition-all duration-300 ' + (ActiveMenu == "company" ? "-rotate-180" : "rotate-0")} alt="" />
-                                    </div>
+                                <div className="relative cursor-pointer transition-all duration-300 px-2 py-2 rounded-lg hover:bg-gray-100 hover:text-Mlogo1">
+                                    <p className='text__16 font-medium text-gray-900'>Company</p>
                                 </div>
                             </div>
                         </div>
@@ -168,148 +159,29 @@ const NewNavbar = () => {
                         <div className="space-y-4 ">
                             {/* Features */}
                             <div className="border-b border-gray-100 pb-4 px-4">
-                                <div className="flex justify-between items-center gap-2 relative cursor-pointer" onClick={() => HandleChaneMenu("features")}>
-                                    <p className='text__18 font-medium text-gray-800'>Features</p>
-                                    <img src={originalUrl + "/images/Arrow Down.svg"} className={'transition-all duration-300 w-[20px] ' + (ActiveMenu == "features" ? "-rotate-180" : "rotate-0")} alt="" />
-                                </div>
-                                <div className={"transition-all duration-300 overflow-hidden " + (ActiveMenu == "features" ? "max-h-screen pt-3" : "max-h-0")}>
-                                    <div className="space-y-2">
-                                        <Link href="/digital-wallet-management" className="text__16 block py-2 text-gray-600 transition-colors">
-                                            Digital Wallet Management
-                                        </Link>
-                                        <Link href="/investment-and-trading" className="text__16 block py-2 text-gray-600 transition-colors">
-                                            Investment and Trading
-                                        </Link>
-                                        <Link href="/easy-money-transfers" className="text__16 block py-2 text-gray-600 transition-colors">
-                                            Easy Money Transfers
-                                        </Link>
-                                    </div>
-                                </div>
+                                <p className='text__18 font-medium text-gray-800'>Features</p>
                             </div>
 
                             {/* Resources */}
                             <div className="border-b border-gray-100 pb-4 px-4">
-                                <div className="flex justify-between items-center gap-2 relative cursor-pointer" onClick={() => HandleChaneMenu("resources")}>
-                                    <p className='text__18 font-medium text-gray-800'>Resources</p>
-                                    <img src={originalUrl + "/images/Arrow Down.svg"} className={'transition-all duration-300 w-[20px] ' + (ActiveMenu == "resources" ? "-rotate-180" : "rotate-0")} alt="" />
-                                </div>
-                                <div className={"transition-all duration-300 overflow-hidden " + (ActiveMenu == "resources" ? "max-h-screen pt-3" : "max-h-0")}>
-                                    <div className="space-y-2">
-                                        <Link href="/resources-library" className="block py-2 text-gray-600 hover:text-Mlogo1 transition-colors">
-                                            Resources Library
-                                        </Link>
-                                        <Link href="/blog" className="block py-2 text-gray-600 hover:text-Mlogo1 transition-colors">
-                                            Blog
-                                        </Link>
-                                        <Link href="/webinar" className="block py-2 text-gray-600 hover:text-Mlogo1 transition-colors">
-                                            Webinar
-                                        </Link>
-                                        <Link href="/podcast" className="block py-2 text-gray-600 hover:text-Mlogo1 transition-colors">
-                                            Podcast
-                                        </Link>
-                                        <Link href="/case-study" className="block py-2 text-gray-600 hover:text-Mlogo1 transition-colors">
-                                            Case Study
-                                        </Link>
-                                    </div>
-                                </div>
+                                <p className='text__18 font-medium text-gray-800'>Resources</p>
                             </div>
 
                             {/* Company */}
                             <div className="pb-4 px-4">
-                                <div className="flex justify-between items-center gap-2 relative cursor-pointer" onClick={() => HandleChaneMenu("company")}>
-                                    <p className='text__18 font-medium text-gray-800'>Company</p>
-                                    <img src={originalUrl + "/images/Arrow Down.svg"} className={'transition-all duration-300 w-[20px] ' + (ActiveMenu == "company" ? "-rotate-180" : "rotate-0")} alt="" />
-                                </div>
-                                <div className={"transition-all duration-300 overflow-hidden " + (ActiveMenu == "company" ? "max-h-screen pt-3" : "max-h-0")}>
-                                    <div className="space-y-2">
-                                        <Link href="/about" className="block py-2 text-gray-600 hover:text-Mlogo1 transition-colors">
-                                            About us
-                                        </Link>
-                                        <Link href="/careers" className="block py-2 text-gray-600 hover:text-Mlogo1 transition-colors">
-                                            Careers
-                                        </Link>
-                                        <Link href="/testimonial" className="block py-2 text-gray-600 hover:text-Mlogo1 transition-colors">
-                                            Testimonial
-                                        </Link>
-                                    </div>
-                                </div>
+                                <p className='text__18 font-medium text-gray-800'>Company</p>
                             </div>
                         </div>
                     </div>
                 </Container>
             </div>
 
-            {/* Desktop Dropdown Menu */}
-            <div className={"fixed w-full z-[90] top-16 transition-all duration-300 lg:block hidden " + (ActiveMenu != "" ? "opacity-100" : "opacity-0 pointer-events-none max-h-0 overflow-hidden")} onMouseEnter={() => {
-                if (timeoutRef.current) {
-                    clearTimeout(timeoutRef.current);
-                }
-            }} onMouseLeave={handleMouseLeave}>
-                <Container>
-                    <div className="w-full shadow-lg px-8 py-8 bg-white/95 backdrop-blur-3xl rounded-bl-md rounded-br-md" >
-                        {ActiveMenu == "features" && (
-                            <div className="grid grid-cols-3 gap-6">
-                                <Link href='/digital-wallet-management' className="p-6 rounded-lg border border-gray-200 hover:border-Mlogo1 transition-colors group">
-                                    <h6 className="font-semibold text-gray-800 group-hover:text-Mlogo1 mb-2">Digital Wallet Management</h6>
-                                    <p className="text-gray-600 text-sm">Manage your digital wallet with ease</p>
-                                </Link>
-                                <Link href='/investment-and-trading' className="p-6 rounded-lg border border-gray-200 hover:border-Mlogo1 transition-colors group">
-                                    <h6 className="font-semibold text-gray-800 group-hover:text-Mlogo1 mb-2">Investment and Trading</h6>
-                                    <p className="text-gray-600 text-sm">Smart investment and trading tools</p>
-                                </Link>
-                                <Link href='/easy-money-transfers' className="p-6 rounded-lg border border-gray-200 hover:border-Mlogo1 transition-colors group">
-                                    <h6 className="font-semibold text-gray-800 group-hover:text-Mlogo1 mb-2">Easy Money Transfers</h6>
-                                    <p className="text-gray-600 text-sm">Send money quickly and securely</p>
-                                </Link>
-                            </div>
-                        )}
 
-                        {ActiveMenu == "resources" && (
-                            <div className="grid grid-cols-4 gap-6">
-                                <Link href='/resources-library' className="p-6 rounded-lg border border-gray-200 hover:border-Mlogo1 transition-colors group">
-                                    <h6 className="font-semibold text-gray-800 group-hover:text-Mlogo1 mb-2">Resources Library</h6>
-                                    <p className="text-gray-600 text-sm">Access our knowledge base</p>
-                                </Link>
-                                <Link href='/blog' className="p-6 rounded-lg border border-gray-200 hover:border-Mlogo1 transition-colors group">
-                                    <h6 className="font-semibold text-gray-800 group-hover:text-Mlogo1 mb-2">Blog</h6>
-                                    <p className="text-gray-600 text-sm">Latest insights and updates</p>
-                                </Link>
-                                <Link href='/webinar' className="p-6 rounded-lg border border-gray-200 hover:border-Mlogo1 transition-colors group">
-                                    <h6 className="font-semibold text-gray-800 group-hover:text-Mlogo1 mb-2">Webinar</h6>
-                                    <p className="text-gray-600 text-sm">Join our educational sessions</p>
-                                </Link>
-                                <Link href='/podcast' className="p-6 rounded-lg border border-gray-200 hover:border-Mlogo1 transition-colors group">
-                                    <h6 className="font-semibold text-gray-800 group-hover:text-Mlogo1 mb-2">Podcast</h6>
-                                    <p className="text-gray-600 text-sm">Listen to expert discussions</p>
-                                </Link>
-                            </div>
-                        )}
-
-                        {ActiveMenu == "company" && (
-                            <div className="grid grid-cols-3 gap-6">
-                                <Link href='/about' className="p-6 rounded-lg border border-gray-200 hover:border-Mlogo1 transition-colors group">
-                                    <h6 className="font-semibold text-gray-800 group-hover:text-Mlogo1 mb-2">About us</h6>
-                                    <p className="text-gray-600 text-sm">Learn about our mission</p>
-                                </Link>
-                                <Link href='/careers' className="p-6 rounded-lg border border-gray-200 hover:border-Mlogo1 transition-colors group">
-                                    <h6 className="font-semibold text-gray-800 group-hover:text-Mlogo1 mb-2">Careers</h6>
-                                    <p className="text-gray-600 text-sm">Join our growing team</p>
-                                </Link>
-                                <Link href='/testimonial' className="p-6 rounded-lg border border-gray-200 hover:border-Mlogo1 transition-colors group">
-                                    <h6 className="font-semibold text-gray-800 group-hover:text-Mlogo1 mb-2">Testimonial</h6>
-                                    <p className="text-gray-600 text-sm">What our customers say</p>
-                                </Link>
-                            </div>
-                        )}
-                    </div>
-                </Container>
-            </div>
 
             {/* Background Overlays */}
             <div onClick={() => {
-                setActiveMenu("")
                 setShowLanguageDropdown(false)
-            }} className={"fixed w-full h-full left-0 top-0 z-[70] transition-all duration-200 lg:block hidden " + (ActiveMenu != "" || showLanguageDropdown ? "bg-white/20 backdrop-blur-lg" : "opacity-0 pointer-events-none")}></div>
+            }} className={"fixed w-full h-full left-0 top-0 z-[70] transition-all duration-200 lg:block hidden " + (showLanguageDropdown ? "bg-white/20 backdrop-blur-lg" : "opacity-0 pointer-events-none")}></div>
             <div onClick={() => setToogleMenuResponsive(!ToogleMenuResponsive)} className={"fixed w-full h-full left-0 top-0 z-[70] transition-all duration-200 lg:hidden " + (ToogleMenuResponsive ? "bg-black opacity-60" : "opacity-0 pointer-events-none")}></div>
         </Fragment>
     )
