@@ -2,6 +2,160 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Base Layer - Typography */
+@layer base {
+    html,
+    body {
+        @apply text-gray-800 font-Inter;
+    }
+
+    /* Apply Inter Tight to all headings */
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Inter Tight', sans-serif;
+        color: #424143;
+    }
+
+    /* H1 / Page Header Styling */
+    h1 {
+        font-size: 80px;
+        font-weight: 700;
+        letter-spacing: 0;
+        line-height: 110%;
+    }
+
+    /* H2 Styling */
+    h2 {
+        font-size: 56px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        line-height: 110%;
+    }
+
+    /* H3 Styling */
+    h3 {
+        font-size: 48px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        line-height: 110%;
+    }
+
+    /* H4 Styling */
+    h4 {
+        font-size: 32px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        line-height: 110%;
+    }
+
+    /* H5 Styling */
+    h5 {
+        font-size: 24px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        line-height: 130%;
+    }
+
+    /* H6 Styling */
+    h6 {
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 0;
+        line-height: 140%;
+    }
+
+    /* Responsive H1 */
+    @media (max-width: 1024px) {
+        h1 {
+            font-size: 56px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 40px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 32px;
+        }
+    }
+
+    /* Responsive H2 */
+    @media (max-width: 1024px) {
+        h2 {
+            font-size: 44px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        h2 {
+            font-size: 32px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        h2 {
+            font-size: 24px;
+        }
+    }
+
+    /* Responsive H3 */
+    @media (max-width: 768px) {
+        h3 {
+            font-size: 32px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        h3 {
+            font-size: 24px;
+        }
+    }
+
+    /* Responsive H4 */
+    @media (max-width: 768px) {
+        h4 {
+            font-size: 24px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        h4 {
+            font-size: 20px;
+        }
+    }
+
+    /* Responsive H5 */
+    @media (max-width: 768px) {
+        h5 {
+            font-size: 20px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        h5 {
+            font-size: 18px;
+        }
+    }
+
+    /* Responsive H6 */
+    @media (max-width: 768px) {
+        h6 {
+            font-size: 16px;
+        }
+    }
+
+    /* Paragraph after header styling */
+    h1 + p,
+    h2 + p {
+        font-family: 'Inter', sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+    }
+}
+
 /* Custom Components & Utilities */
 @layer components {
     /* Button Link Component */
@@ -21,36 +175,36 @@
 
     /* Primary Text Colors */
     .text-primary {
-        color: #424143 !important; /* Logo text color - main headings & body */
+        color: #424143; /* Logo text color - main headings & body */
     }
 
     .text-secondary {
-        color: #6B7280 !important; /* Gray-600 - secondary text, descriptions */
+        color: #6B7280; /* Gray-600 - secondary text, descriptions */
     }
 
     .text-tertiary {
-        color: #9CA3AF !important; /* Gray-400 - subtle text, placeholders */
+        color: #9CA3AF; /* Gray-400 - subtle text, placeholders */
     }
 
     .text-inverse {
-        color: #FFFFFF !important; /* White - text on dark backgrounds */
+        color: #FFFFFF; /* White - text on dark backgrounds */
     }
 
     /* Brand Text Colors */
     .text-brand-primary {
-        color: #6373AD !important; /* Primary blue */
+        color: #6373AD; /* Primary blue */
     }
 
     .text-brand-secondary {
-        color: #44AA99 !important; /* Teal */
+        color: #44AA99; /* Teal */
     }
 
     .text-brand-accent {
-        color: #A1609D !important; /* Purple */
+        color: #A1609D; /* Purple */
     }
 
     .text-brand-warning {
-        color: #EA9E51 !important; /* Orange */
+        color: #EA9E51; /* Orange */
     }
 
     /* Semantic Text Colors */
@@ -278,153 +432,6 @@
     .bg-grey-6 {
         background-color: #6B7280 !important;
     }
-}
-
-html,
-body {
-    @apply text-gray-800 font-Inter
-}
-
-/* Apply Inter Tight to all headings */
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Inter Tight', sans-serif !important;
-    color: #424143 !important;
-}
-
-/* H1 / Page Header Styling */
-h1 {
-    font-size: 80px !important;
-    font-weight: 700 !important;
-    letter-spacing: 0 !important; /* -4% */
-    line-height: 110% !important;
-}
-
-/* Responsive H1 for smaller screens */
-@media (max-width: 1024px) {
-    h1 {
-        font-size: 56px !important;
-    }
-}
-
-@media (max-width: 768px) {
-    h1 {
-        font-size: 40px !important;
-    }
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 32px !important;
-    }
-}
-
-/* H2 Styling */
-h2 {
-    font-size: 56px !important;
-    font-weight: 600 !important;
-    letter-spacing: -0.02em !important; /* -4% */
-    line-height: 110% !important;
-}
-
-/* Responsive H2 for smaller screens */
-@media (max-width: 1024px) {
-    h2 {
-        font-size: 44px !important;
-    }
-}
-
-@media (max-width: 768px) {
-    h2 {
-        font-size: 32px !important;
-    }
-}
-
-@media (max-width: 480px) {
-    h2 {
-        font-size: 24px !important;
-    }
-}
-
-/* H3 Styling */
-h3 {
-    font-size: 48px !important;
-    font-weight: 600 !important;
-    letter-spacing: -0.02em !important; /* -2% */
-    line-height: 110% !important;
-}
-
-@media (max-width: 768px) {
-    h3 {
-        font-size: 32px !important;
-    }
-}
-
-@media (max-width: 480px) {
-    h3 {
-        font-size: 24px !important;
-    }
-}
-
-/* H4 Styling */
-h4 {
-    font-size: 32px !important;
-    font-weight: 600 !important;
-    letter-spacing: -0.01em !important; /* -1% */
-    line-height: 110% !important;
-}
-
-@media (max-width: 768px) {
-    h4 {
-        font-size: 24px !important;
-    }
-}
-
-@media (max-width: 480px) {
-    h4 {
-        font-size: 20px !important;
-    }
-}
-
-/* H5 Styling */
-h5 {
-    font-size: 24px !important;
-    font-weight: 600 !important;
-    letter-spacing: -0.01em !important; /* -1% */
-    line-height: 130% !important;
-}
-
-@media (max-width: 768px) {
-    h5 {
-        font-size: 20px !important;
-    }
-}
-
-@media (max-width: 480px) {
-    h5 {
-        font-size: 18px !important;
-    }
-}
-
-/* H6 Styling */
-h6 {
-    font-size: 18px !important;
-    font-weight: 600 !important;
-    letter-spacing: 0 !important;
-    line-height: 140% !important;
-}
-
-@media (max-width: 768px) {
-    h6 {
-        font-size: 16px !important;
-    }
-}
-
-/* Paragraph after header styling */
-h1 + p,
-h2 + p {
-    font-family: 'Inter', sans-serif;
-    font-size: 18px;
-    font-weight: 400;
 }
 
 .container {

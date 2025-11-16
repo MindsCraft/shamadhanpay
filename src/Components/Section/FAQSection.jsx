@@ -46,8 +46,8 @@ const FAQSection = () => {
                           title: "What can I do with Shamadhan Digital Banking?",
                           desc: "To keep your Shamadhan account information safe, use a strong, unique password and enable two-factor authentication. Regularly monitor your account for suspicious activity and ensure your app and device software are up-to-date. Be cautious of phishing scams—Shamadhan will never ask for your password via email.",
                         },
-                      ].map((obj) => {
-                        return <Fragment>
+                      ].map((obj, index) => {
+                        return <Fragment key={index}>
                           <AccordionHelp title={obj.title} desc={obj.desc} />
                           <div className="w-full h-[1px] bg-Mneutral200"></div>
                         </Fragment>

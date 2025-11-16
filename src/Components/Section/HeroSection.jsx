@@ -113,7 +113,7 @@ const HeroSection = () => {
                                     { file: 'trust-bank.png', name: 'Trust Bank PLC' },
                                     { file: 'standard-chartered.svg', name: 'Standard Chartered Bank' },
                                 ]).map((bank, index) => (
-                                    <div key={index} className="flex-shrink-0 px-6 flex items-center justify-center">
+                                    <div key={`${bank.file}-${index}`} className="flex-shrink-0 px-6 flex items-center justify-center">
                                         <img
                                             src={`${originalUrl}/content/banks/${bank.file}`}
                                             alt={bank.name}
