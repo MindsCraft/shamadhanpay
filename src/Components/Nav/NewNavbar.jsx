@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react'
 import useHostname from '../Provider/HostnameProvider';
 import { Container } from 'react-bootstrap';
 import Link from 'next/link';
+import DownloadIcon from '../svg/DownloadIcon';
 
 const NewNavbar = () => {
     const originalUrl = useHostname();
@@ -46,38 +47,38 @@ const NewNavbar = () => {
     return (
         <Fragment>
             {/* Main Navbar */}
-            <div className="fixed w-full z-[99] top-4">
+            <div className="fixed w-full z-[99] top-2">
                 <Container  className="">
-                    <div className="flex w-full items-center justify-between py-2 px-3  bg-white/95 backdrop-blur-3xl rounded-lg" style={{ boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.01), 0 8px 10px -10px rgba(0, 0, 0, 0.02)' }}>
+                    <div className="flex w-full items-center justify-between py-2 px-3  bg-white/95 backdrop-blur-3xl rounded-lg" style={{ boxShadow: '0px 9px 25px -5px rgba(0, 0, 0, 0.03), 0 8px 10px -10px rgba(0, 0, 0, 0.03)' }}>
                         {/* Left Side - Logo and Navigation Links */}
-                        <div className="flex items-center gap-8">
+                        <div className="flex items-center gap-10">
                             <Link href="/" className='inline-block'>
-                                <img src={originalUrl + "/content/spay-logo.svg"} alt="" style={{ maxHeight: '40px' }} />
+                                <img src={originalUrl + "/content/spay-logo-square.svg"} alt="Shamadhan Pay" style={{ maxHeight: '48px' }} />
                             </Link>
 
                             {/* Desktop Navigation Links */}
                             <div className="hidden lg:flex items-center gap-1">
-                                <div className="relative cursor-pointer transition-all duration-300 px-2 py-2 rounded-lg hover:bg-gray-100 hover:text-Mlogo1">
-                                    <p className='text__16 font-medium text-gray-900'>Features</p>
+                                <div className="relative cursor-pointer transition-all duration-300 px-2 py-2 rounded-lg hover:text-dark">
+                                    <p className='font-semibold'>Features</p>
                                 </div>
-                                <div className="relative cursor-pointer transition-all duration-300 px-2 py-2 rounded-lg hover:bg-gray-100 hover:text-Mlogo1">
-                                    <p className='text__16 font-medium text-gray-900'>Resources</p>
+                                <div className="relative cursor-pointer transition-all duration-300 px-2 py-2 rounded-lg hover:text-dark">
+                                    <p className='font-semibold'>Resources</p>
                                 </div>
-                                <div className="relative cursor-pointer transition-all duration-300 px-2 py-2 rounded-lg hover:bg-gray-100 hover:text-Mlogo1">
-                                    <p className='text__16 font-medium text-gray-900'>Company</p>
+                                <div className="relative cursor-pointer transition-all duration-300 px-2 py-2 rounded-lg hover:text-dark">
+                                    <p className='font-semibold'>Company</p>
                                 </div>
                             </div>
                         </div>
 
                         {/* Right Side - Language Dropdown, Login, Download Button */}
-                        <div className="flex items-center">
+                        <div className="flex items-center gap-1">
                             {/* Language Dropdown - Desktop */}
                             <div className="hidden lg:block relative">
                                 <button
                                     onClick={() => setShowLanguageDropdown(!showLanguageDropdown)}
                                     className="flex items-center gap-2 px-2 py-2 rounded-lg hover:bg-gray-100 transition-colors"
                                 >
-                                    <span className="text__14 font-medium ">{selectedLanguage}</span>
+                                    <span className="text__14 font-semibold ">{selectedLanguage}</span>
                                     <img src={originalUrl + "/images/Arrow Down.svg"} className={'transition-all duration-300 w-3 ' + (showLanguageDropdown ? "-rotate-180" : "rotate-0")} alt="" />
                                 </button>
 
@@ -99,13 +100,14 @@ const NewNavbar = () => {
                             </div>
 
                             {/* Login Link - Desktop */}
-                            <Link href="/login" className='hidden lg:inline-block text__16 font-medium text-gray-900 hover:text-[#6373AD] transition-colors px-3 py-2'>
+                            <Link href="/login" className='hidden lg:inline-block font-semibold transition-colors px-3 py-2'>
                                 Login
                             </Link>
 
                             {/* Download App Button - Desktop */}
-                            <Link href="/download" className='hidden lg:inline-block rounded-md px-3 py-2 bg-[#6373AD] text-white font-semibold text-sm hover:bg-[#556299] transition-all'>
-                                Download App
+                            <Link href="/download" className='hidden lg:inline-flex items-center gap-2 rounded-md px-3 py-2 bg-[#6373AD] text-white text__14 font-semibold hover:bg-[#556299] transition-all' style={{ boxShadow: '0 4px 16px 0 rgba(99, 115, 173, 0.25)' }}>
+                                <span>Download App</span>
+                                <DownloadIcon width={18} height={18} fill="white" />
                             </Link>
 
                             {/* Mobile Menu Button */}
@@ -127,8 +129,9 @@ const NewNavbar = () => {
                     <div className="py-6 bg-white border-b border-gray-100">
                         {/* Mobile Action Buttons */}
                         <div className="px-4 pb-4 border-b border-gray-100 mb-4 space-y-3">
-                            <Link href="/download" className='block w-full text-center rounded-md px-6 py-3 bg-[#6373AD] text-white font-semibold hover:bg-[#556299] transition-all'>
-                                Download App
+                            <Link href="/download" className='flex items-center justify-center gap-2 w-full rounded-md px-6 py-3 bg-[#6373AD] text-white font-semibold hover:bg-[#556299] transition-all'>
+                                <span>Download App</span>
+                                <DownloadIcon width={20} height={20} fill="white" />
                             </Link>
                             <Link href="/login" className='block w-full text-center rounded-md px-6 py-3 border-2 border-gray-300 text-gray-700 font-semibold hover:bg-gray-100 transition-all'>
                                 Login

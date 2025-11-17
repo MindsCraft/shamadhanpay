@@ -69,7 +69,7 @@ const HowItWorksSection = () => {
                                         <div className="lg:px-[4rem]">
                                             <h4 className='mb-3'>{card.title}</h4>
                                             <p className='mb-4'>{card.description}</p>
-                                            <h5 className='mb-2'>{card.stepsTitle}</h5>
+                                            <h6 className='mb-3'>{card.stepsTitle}</h6>
                                             <ul className="pl-6 list-decimal mb-6">
                                                 {card.steps.map((step, stepIndex) => (
                                                     <li key={stepIndex}>{step}</li>
