@@ -47,13 +47,13 @@ const NewNavbar = () => {
     return (
         <Fragment>
             {/* Main Navbar */}
-            <div className="fixed w-full z-[99] top-2">
-                <Container  className="">
-                    <div className="flex w-full items-center justify-between py-2 px-3  bg-white/95 backdrop-blur-3xl rounded-lg" style={{ boxShadow: '0px 9px 25px -5px rgba(0, 0, 0, 0.03), 0 8px 10px -10px rgba(0, 0, 0, 0.03)' }}>
+            <div className="fixed w-full z-[99] top-0 bg-white/50 backdrop-blur-2xl">
+                <Container>
+                    <div className="flex w-full items-center justify-between py-2.5">
                         {/* Left Side - Logo and Navigation Links */}
                         <div className="flex items-center gap-10">
                             <Link href="/" className='inline-block'>
-                                <img src={originalUrl + "/content/spay-logo-square.svg"} alt="Shamadhan Pay" style={{ maxHeight: '48px' }} />
+                                <img src={originalUrl + "/content/spay-logo-square.svg"} alt="Shamadhan Pay" style={{ maxHeight: '56px' }} />
                             </Link>
 
                             {/* Desktop Navigation Links */}
@@ -105,7 +105,7 @@ const NewNavbar = () => {
                             </Link>
 
                             {/* Download App Button - Desktop */}
-                            <Link href="/download" className='hidden lg:inline-flex items-center gap-2 rounded-md px-3 py-2 bg-[#6373AD] text-white text__14 font-semibold hover:bg-[#556299] transition-all' style={{ boxShadow: '0 4px 16px 0 rgba(99, 115, 173, 0.25)' }}>
+                            <Link href="/download" className='hidden lg:inline-flex items-center gap-2 rounded-md px-3 py-2 bg-[#6373AD] text-white text__14 font-semibold hover:bg-[#556299] transition-all' style={{ boxShadow: '0 3px 8px 0 rgba(99, 115, 173, 0.2)'}}>
                                 <span>Download App</span>
                                 <DownloadIcon width={18} height={18} fill="white" />
                             </Link>
