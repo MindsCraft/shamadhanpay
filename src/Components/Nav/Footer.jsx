@@ -15,18 +15,18 @@ const Footer = () => {
                         <Col lg={6} className='mb-8 lg:mb-0'>
                             {/* Logo */}
                             <div className='mb-6'>
-                                <img src={originalUrl + "/content/spay-logo-square.svg"} alt="Shamadhan Logo" className='h-12' />
+                                <img src={originalUrl + "/content/spay-logo-square.svg"} alt="Shamadhan Logo" className='max-h-16'/>
                             </div>
 
                             {/* Brand Description */}
-                            <p className='text__16 text-gray-600 mb-8 max-w-md'>
+                            <p className='font-medium mb-8 max-w-md'>
                                 Your trusted digital payment solution. Send money, pay bills, and manage your finances securely — all in one app.
                             </p>
 
                             {/* Download Section */}
                             <div className='mb-10'>
                                 <h4 className='font-semibold text__18 mb-3'>Get the App</h4>
-                                <p className='text__14 text-gray-600 mb-4'>Download now and experience seamless digital payments.</p>
+                                <p className='hidden mb-4'>Download now and experience seamless digital payments.</p>
                                 {/* App Store Buttons */}
                                 <div className='flex flex-wrap gap-3'>
                                     <Link href="#!" className='inline-block hover:opacity-80 transition-opacity'>
