@@ -104,27 +104,34 @@ const HowItWorksSection = () => {
                         {cards.map((card, index) => (
                             <div
                                 key={index}
-                                className="w-full bg-white rounded-[20px] overflow-hidden"
-                                style={{ boxShadow: '0 2px 24px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.05)' }}
+                                className="w-full bg-white rounded-[12px]"
+                                style={{ border: '1px solid rgba(0,0,0,0.07)' }}
                             >
                                 <Row className='g-0 justify-between'>
                                     {/* Image Column */}
                                     <Col
                                         md={5}
                                         className={`${card.imagePosition === 'right' ? 'order-1 md:!order-2' : ''}`}
-                                        style={{ minHeight: '360px' }}
+                                        style={{ padding: '12px' }}
                                     >
-                                        <div className="w-full h-full relative overflow-hidden" style={{ minHeight: '360px' }}>
-                                            {/* Coloured gradient overlay on image */}
+                                        <div
+                                            style={{
+                                                height: '380px',
+                                                borderRadius: '8px',
+                                                overflow: 'hidden',
+                                                position: 'relative',
+                                            }}
+                                        >
                                             <div
-                                                className="absolute inset-0 z-10"
                                                 style={{
+                                                    position: 'absolute',
+                                                    inset: 0,
+                                                    zIndex: 1,
                                                     background: `linear-gradient(135deg, ${card.tagColor}22 0%, transparent 60%)`,
                                                 }}
                                             />
                                             <img
-                                                className="w-full h-full object-cover"
-                                                style={{ minHeight: '360px' }}
+                                                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                                                 src={originalUrl + card.image}
                                                 alt={card.title}
                                             />
