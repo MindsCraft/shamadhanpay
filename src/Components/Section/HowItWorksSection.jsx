@@ -49,33 +49,46 @@ const HowItWorksSection = () => {
         <section className='py-2'>
             <div className="py-[4rem] lg:py-[8rem] bg-bg-grey-2">
                 <Container>
-                    <Row className='justify-between mb-[2rem] sm:mb-[3rem] lg:mb-[4rem]'>
-                        <Col md={6} className='lg:my-auto'>
-                            <h2 className='mb-4'>How Shamadhan Works</h2>
-                            <p className=''>
-                                From wallet recharge to QR payments —<br/>
+                    <Row className='justify-between mb-[3rem] lg:mb-[5rem]'>
+                        <Col md={12} lg={6} className='lg:my-auto'>
+                            <h2 className='mb-4 font-InterTight font-bold text-gray-900 tracking-tight'>How Shamadhan Works</h2>
+                            <p className='text-lg lg:text-xl text-gray-600 leading-relaxed max-w-2xl'>
+                                From wallet recharge to QR payments —<br className="hidden md:block" />
                                 Here’s how users get things done with Shamadhan Pay.
                             </p>
                         </Col>
                     </Row>
-                    <div className="grid grid-rows-1 gap-y-6">
+                    <div className="grid grid-rows-1 gap-y-10 lg:gap-y-16">
                         {cards.map((card, index) => (
-                            <div key={index} className="w-full p-3 bg-white rounded-[12px]">
-                                <Row className='justify-between gap-y-3'>
-                                    <Col md={5} className={`my-auto rounded-[8px] ${card.imagePosition === 'right' ? 'order-1 md:!order-2' : ''}`}>
-                                        <img className="rounded-[8px]" src={originalUrl + card.image} alt={card.title} />
+                            <div key={index} className="w-full p-4 lg:p-8 bg-white rounded-[24px] shadow-sm hover:shadow-md transition-shadow duration-300">
+                                <Row className='justify-between items-center gap-y-8'>
+                                    <Col md={5} className={`rounded-[16px] overflow-hidden ${card.imagePosition === 'right' ? 'order-1 md:!order-2' : ''}`}>
+                                        <div className="aspect-[4/3] overflow-hidden rounded-[16px] bg-gray-50">
+                                            <img 
+                                                className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" 
+                                                src={originalUrl + card.image} 
+                                                alt={card.title} 
+                                            />
+                                        </div>
                                     </Col>
-                                    <Col md={7} className={`my-auto ${card.imagePosition === 'right' ? 'md:!order-1 order-2' : ''}`}>
-                                        <div className="lg:px-[4rem]">
-                                            <h4 className='mb-3'>{card.title}</h4>
-                                            <p className='mb-4'>{card.description}</p>
-                                            <h6 className='mb-3'>{card.stepsTitle}</h6>
-                                            <ul className="pl-6 list-decimal mb-6">
-                                                {card.steps.map((step, stepIndex) => (
-                                                    <li key={stepIndex}>{step}</li>
-                                                ))}
-                                            </ul>
-                                            {/*<ActionBtn link={card.link} title="Get Started" />*/}
+                                    <Col md={7} className={`${card.imagePosition === 'right' ? 'md:!order-1 order-2' : ''}`}>
+                                        <div className="lg:pl-12 lg:pr-8">
+                                            <h3 className='text-3xl lg:text-4xl font-bold mb-5 text-gray-900 leading-tight'>{card.title}</h3>
+                                            <p className='text-lg text-gray-600 mb-8 leading-relaxed'>{card.description}</p>
+                                            
+                                            <div className="space-y-4">
+                                                <h6 className='text-sm font-bold uppercase tracking-widest text-brand-primary opacity-80'>{card.stepsTitle}</h6>
+                                                <ul className="space-y-4">
+                                                    {card.steps.map((step, stepIndex) => (
+                                                        <li key={stepIndex} className="flex gap-4 items-start group">
+                                                            <span className="flex-shrink-0 w-7 h-7 rounded-full bg-brand-primary/10 text-brand-primary flex items-center justify-center text-sm font-bold mt-0.5 group-hover:bg-brand-primary group-hover:text-white transition-colors duration-200">
+                                                                {stepIndex + 1}
+                                                            </span>
+                                                            <span className="text-gray-700 font-medium leading-normal pt-0.5">{step}</span>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
                                         </div>
                                     </Col>
                                 </Row>
