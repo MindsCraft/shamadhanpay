@@ -16,7 +16,7 @@ const NewsSection = () => {
                   <h2 className='mb-0'>Updates & Insights</h2>
                 </Col>
                 <Col md={5} className='flex justify-between flex-column align-items-end'>
-                  <a href="/blog" className="flex align-items-end lg:flex btn-link text-brand-primary mt-3">
+                  <a href="/blog" className="btn-link mt-3">
                     <span>More News</span>
                     <svg
                       width="24"

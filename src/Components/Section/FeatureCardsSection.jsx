@@ -124,7 +124,7 @@ const FeatureCardsSection = () => {
                             in One Digital Wallet
                         </h2>
                         {/* See All Features Link */}
-                        <a href="/features" className="flex align-items-end lg:flex btn-link text-brand-primary">
+                        <a href="/features" className="btn-link">
                             <span>All Features</span>
                             <svg
                                 width="24"
@@ -132,7 +132,7 @@ const FeatureCardsSection = () => {
                                 viewBox="0 0 24 24"
                                 fill="none"
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="w-5 h-5"
+                                className=""
                             >
                                 <path
                                     d="M7 17L17 7M17 7H7M17 7V17"

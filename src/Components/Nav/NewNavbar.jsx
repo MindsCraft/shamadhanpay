@@ -59,18 +59,21 @@ const NewNavbar = () => {
 
                             {/* Desktop Navigation Links */}
                             <div className="hidden lg:flex items-center gap-1">
+                                <div className="relative cursor-pointer transition-all duration-300 px-2 py-2 rounded-lg hover:bg-gray-100">
+                                    <p className='font-semibold'>Offers</p>
+                                </div>
                                 <div 
                                     className="relative cursor-pointer transition-all duration-300 px-2 py-2 rounded-lg hover:bg-gray-100"
                                     onMouseEnter={() => handleMouseEnter("features")} 
                                     onMouseLeave={handleMouseLeave}
                                 >
                                     <div className="flex items-center gap-2">
-                                        <p className='font-semibold'>Features</p>
+                                        <p className='font-semibold'>Individual</p>
                                         <img src={originalUrl + "/images/Arrow Down.svg"} className={'transition-all duration-300 w-3 ' + (ActiveMenu === "features" ? "-rotate-180" : "rotate-0")} alt="" />
                                     </div>
                                 </div>
                                 <div className="relative cursor-pointer transition-all duration-300 px-2 py-2 rounded-lg hover:bg-gray-100">
-                                    <p className='font-semibold'>Resources</p>
+                                    <p className='font-semibold'>Business</p>
                                 </div>
                                 <div className="relative cursor-pointer transition-all duration-300 px-2 py-2 rounded-lg hover:bg-gray-100">
                                     <p className='font-semibold'>Company</p>
@@ -168,14 +171,19 @@ const NewNavbar = () => {
                         </div>
 
                         <div className="space-y-4 ">
-                            {/* Features */}
+                            {/* Offers */}
                             <div className="border-b border-gray-100 pb-4 px-4">
-                                <p className='text__18 font-medium text-gray-800'>Features</p>
+                                <p className='text__18 font-medium text-gray-800'>Offers</p>
                             </div>
 
-                            {/* Resources */}
+                            {/* Individual */}
                             <div className="border-b border-gray-100 pb-4 px-4">
-                                <p className='text__18 font-medium text-gray-800'>Resources</p>
+                                <p className='text__18 font-medium text-gray-800'>Individual</p>
+                            </div>
+
+                            {/* Business */}
+                            <div className="border-b border-gray-100 pb-4 px-4">
+                                <p className='text__18 font-medium text-gray-800'>Business</p>
                             </div>
 
                             {/* Company */}

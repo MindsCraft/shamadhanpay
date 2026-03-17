@@ -187,7 +187,7 @@ const CampaignSliderSection = () => {
                         <p className='mb-4'>
                             From cashback to referral rewards — we’re launching with benefits just for you.
                         </p>
-                        <a href="/features" className="flex align-items-end lg:flex btn-link text-brand-primary mt-3">
+                        <a href="/features" className="btn-link mt-3">
                             <span>All Campaigns</span>
                             <svg
                               width="24"
