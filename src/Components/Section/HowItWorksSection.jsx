@@ -104,63 +104,59 @@ const HowItWorksSection = () => {
                         {cards.map((card, index) => (
                             <div
                                 key={index}
-                                className="w-full bg-white rounded-[12px]"
-                                style={{ border: '1px solid rgba(0,0,0,0.07)' }}
+                                className="w-full bg-white rounded-[12px] overflow-hidden"
                             >
                                 <Row className='g-0 justify-between'>
                                     {/* Image Column */}
                                     <Col
-                                        md={5}
+                                        md={6}
                                         className={`${card.imagePosition === 'right' ? 'order-1 md:!order-2' : ''}`}
-                                        style={{ padding: '12px' }}
+                                        style={{ padding: 0, minHeight: '400px' }}
                                     >
-                                        <div
-                                            style={{
-                                                height: '380px',
-                                                borderRadius: '8px',
-                                                overflow: 'hidden',
-                                                position: 'relative',
-                                            }}
-                                        >
+                                        <div style={{ position: 'relative', width: '100%', height: '100%', minHeight: '400px', padding: '12px' }}>
                                             <div
                                                 style={{
                                                     position: 'absolute',
-                                                    inset: 0,
-                                                    zIndex: 1,
-                                                    background: `linear-gradient(135deg, ${card.tagColor}22 0%, transparent 60%)`,
+                                                    inset: '12px',
+                                                    borderRadius: '8px',
+                                                    overflow: 'hidden',
                                                 }}
-                                            />
-                                            <img
-                                                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                                                src={originalUrl + card.image}
-                                                alt={card.title}
-                                            />
+                                            >
+                                                <div
+                                                    style={{
+                                                        position: 'absolute',
+                                                        inset: 0,
+                                                        zIndex: 1,
+                                                        background: `linear-gradient(135deg, ${card.tagColor}22 0%, transparent 60%)`,
+                                                    }}
+                                                />
+                                                <img
+                                                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                                                    src={originalUrl + card.image}
+                                                    alt={card.title}
+                                                />
+                                            </div>
                                         </div>
                                     </Col>
 
                                     {/* Text Column */}
                                     <Col
-                                        md={7}
+                                        md={6}
                                         className={`my-auto ${card.imagePosition === 'right' ? 'md:!order-1 order-2' : ''}`}
                                     >
                                         <div className="p-8 lg:p-12">
 
-                                            {/* Pill Tag */}
-                                            <div className="mb-5">
-                                                <span
-                                                    className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] px-4 py-2 rounded-full border"
-                                                    style={{
-                                                        color: card.tagColor,
-                                                        background: card.tagBg,
-                                                        borderColor: `${card.tagColor}30`,
-                                                    }}
-                                                >
-                                                    <span
-                                                        className="w-1.5 h-1.5 rounded-full flex-shrink-0"
+                                            {/* Tag — matches site-wide tag design */}
+                                            <div className='mb-3'>
+                                                <div className='inline-flex items-center gap-2 pl-1 pr-3 py-1 bg-bg-grey-2 rounded-full'>
+                                                    <div
+                                                        className='flex items-center justify-center w-6 h-6 rounded-full'
                                                         style={{ background: card.tagColor }}
-                                                    />
-                                                    {card.tag}
-                                                </span>
+                                                    >
+                                                        <span className='text-white text-[10px] font-bold'>{index + 1}</span>
+                                                    </div>
+                                                    <span className='text__14 font-semibold uppercase'>{card.tag}</span>
+                                                </div>
                                             </div>
 
                                             {/* Title */}

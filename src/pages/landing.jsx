@@ -56,7 +56,7 @@ const Landing = () => {
 
     return (
         <Fragment>
-            <LandingLayout title='Landing Page - Healify' description='Layout description'>
+            <LandingLayout title='Shamadhan Pay - Your Simple Wallet' description='Experience the ultimate in secure and smart digital payments. Send money, pay bills, and more.'>
 
                 <HeroSection />
 

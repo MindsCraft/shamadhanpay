@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import useHostname from '../Provider/HostnameProvider';
 import { Container } from 'react-bootstrap';
 import Link from 'next/link';
@@ -8,7 +8,22 @@ const NewNavbar = () => {
     const originalUrl = useHostname();
 
     const [ToogleMenuResponsive, setToogleMenuResponsive] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
     const [ActiveMenu, setActiveMenu] = useState("")
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 10) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     const [activeFeatureTab, setActiveFeatureTab] = useState("send-money")
     const [selectedLanguage, setSelectedLanguage] = useState("EN")
     const [showLanguageDropdown, setShowLanguageDropdown] = useState(false)
@@ -48,7 +63,7 @@ const NewNavbar = () => {
     return (
         <Fragment>
             {/* Main Navbar */}
-            <div className="fixed w-full z-[99] top-0 bg-white/50 backdrop-blur-2xl">
+            <div className={`fixed w-full z-[99] top-0 transition-all duration-300 ${scrolled ? 'glass-header py-0' : 'bg-white/50 backdrop-blur-2xl py-2'}`}>
                 <Container>
                     <div className="flex w-full items-center justify-between py-2.5">
                         {/* Left Side - Logo and Navigation Links */}

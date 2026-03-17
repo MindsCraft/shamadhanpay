@@ -56,23 +56,39 @@ const Index = () => {
 
     return (
         <Fragment>
-            <LandingLayout title='Landing Page - Healify' description='Layout description'>
+            <LandingLayout title='Shamadhan Pay - Payments Made Simple' description='Experience the ultimate in secure and smart digital payments. Send money, pay bills, and more.'>
 
-                <HeroSection />
+                <div className="reveal-up">
+                    <HeroSection />
+                </div>
 
-                <FeatureCardsSection />
+                <div className="reveal-up delay-100">
+                    <FeatureCardsSection />
+                </div>
 
-                <SecuritySection />
+                <div className="reveal-up delay-200">
+                    <SecuritySection />
+                </div>
 
-                <CampaignSliderSection />
+                <div className="reveal-up">
+                    <CampaignSliderSection />
+                </div>
 
-                <HowItWorksSection />
+                <div className="reveal-up">
+                    <HowItWorksSection />
+                </div>
 
-                <NewsSection />
+                <div className="reveal-up">
+                    <NewsSection />
+                </div>
 
-                <FAQSection />
+                <div className="reveal-up">
+                    <FAQSection />
+                </div>
 
-                <CTASection type={1} />
+                <div className="reveal-up">
+                    <CTASection type={1} />
+                </div>
 
             </LandingLayout>
         </Fragment>
