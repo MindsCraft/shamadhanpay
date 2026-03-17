@@ -12,7 +12,7 @@ const LandingLayout = ({ children, title = "Landing Page", description = "Landin
                 <meta name="description" content={description} />
             </Head>
 
-            <div className='w-full overflow-clip min-h-screen'>
+            <div className='w-full overflow-hidden min-h-screen'>
 
                 {
                     navbar ? <NewNavbar /> : ""
