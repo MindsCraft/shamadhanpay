@@ -1,81 +1,209 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
-import ActionBtn from '../Button/ActionBtn'
 import useHostname from '../Provider/HostnameProvider'
+
+const cards = [
+    {
+        tag: "Wallet",
+        tagColor: "#6373AD",
+        tagBg: "rgba(99,115,173,0.1)",
+        accentGrad: "linear-gradient(90deg, #6373AD, #8fa3d4)",
+        image: "/content/campaigns/research.png",
+        title: "Recharge Your Wallet",
+        description: "Top up your Shamadhan Pay wallet in seconds using your bank account or card — fast, secure, and ready to go.",
+        stepsTitle: "Steps to Recharge",
+        steps: [
+            "Open the Shamadhan Pay app",
+            "Tap \"Add Money\"",
+            "Choose Bank Account or Card",
+            "Enter amount and confirm",
+            "Your wallet is instantly ready",
+        ],
+        imagePosition: "left",
+    },
+    {
+        tag: "Bills",
+        tagColor: "#44AA99",
+        tagBg: "rgba(68,170,153,0.1)",
+        accentGrad: "linear-gradient(90deg, #44AA99, #7fcfc4)",
+        image: "/content/campaigns/paybills.png",
+        title: "Pay Utility Bills",
+        description: "Pay DESCO, WASA, Gas and dozens of providers directly from your wallet — no queues, instant confirmation.",
+        stepsTitle: "Steps to Pay Bills",
+        steps: [
+            "Tap \"Bill Pay\" in the app",
+            "Select your provider (e.g., DESCO)",
+            "Enter account number & amount",
+            "Confirm and pay",
+            "Receive your receipt instantly",
+        ],
+        imagePosition: "right",
+    },
+    {
+        tag: "QR Pay",
+        tagColor: "#A1609D",
+        tagBg: "rgba(161,96,157,0.1)",
+        accentGrad: "linear-gradient(90deg, #A1609D, #cc8fc9)",
+        image: "/content/campaigns/qrcode.png",
+        title: "Shop with QR Scan",
+        description: "Just scan the merchant's QR code and pay directly from your wallet — no cash, no contact, in seconds.",
+        stepsTitle: "Steps to Scan & Pay",
+        steps: [
+            "Tap \"Scan QR\" on the home screen",
+            "Point camera at the merchant's QR",
+            "Verify the amount shown",
+            "Confirm with one tap",
+            "Done — payment is instant!",
+        ],
+        imagePosition: "left",
+    },
+    {
+        tag: "Transfer",
+        tagColor: "#EA9E51",
+        tagBg: "rgba(234,158,81,0.1)",
+        accentGrad: "linear-gradient(90deg, #EA9E51, #f2c285)",
+        image: "/content/campaigns/sendMoney.png",
+        title: "Send Money Instantly",
+        description: "Split bills, pay your tutor, or send to family — enter a phone number and tap Send. Done in seconds.",
+        stepsTitle: "Steps to Send Money",
+        steps: [
+            "Tap \"Send Money\"",
+            "Enter recipient's phone number",
+            "Type the amount",
+            "Add a note (optional)",
+            "Confirm — it arrives instantly",
+        ],
+        imagePosition: "right",
+    },
+]
 
 const HowItWorksSection = () => {
     const originalUrl = useHostname()
-
-    const cards = [
-        {
-            image: "/content/campaigns/research.png",
-            title: "Recharge Your Wallet\n",
-            description: "Top up your Shamadhan Pay wallet using your bank account or debit/credit card. It's fast, secure, and sets you up for everything else.",
-            stepsTitle: "Steps to Recharge:",
-            steps: ["Open the Shamadhan Pay app", "Tap \"Add Money\"", "Choose Bank Account or Card", "Enter amount and confirm", "Your wallet is ready to use"],
-            link: "/case-study/detail/financial-transformation-with-⎯-finpro",
-            imagePosition: "left"
-        },
-        {
-            image: "/content/campaigns/paybills.png",
-            title: "Pay Utility Bills\n",
-            description: "Pay DESCO, WASA, or other bills directly from your wallet.",
-            stepsTitle: " Steps to Pay Bills:",
-            steps: ["Tap \"Bill Pay\" in the app", "Select your provider (e.g., DESCO)", "Enter account number and amount", "Confirm payment", "Get instant confirmation and cashback (if eligible)"],
-            link: "/case-study/detail/financial-transformation-with-⎯-finpro",
-            imagePosition: "right"
-        },
-        {
-            image: "/content/campaigns/qrcode.png",
-            title: "Shop with QR",
-            description: "Whether you’re buying groceries or grabbing tea, just scan the QR code and pay directly from your wallet.",
-            stepsTitle: "Steps to Scan & Pay:",
-            steps: ["Tap \"Scan QR\" on the home screen", "Point your camera at the merchant’s QR code","Enter amount and confirm","Payment is done — no cash, no hassle"],
-            link: "/case-study/detail/financial-transformation-with-⎯-finpro",
-            imagePosition: "left"
-        },
-        {
-            image: "/content/campaigns/sendMoney.png",
-            title: "Send Money",
-            description: "Split lunch bills, send money to family, or pay your tutor — just enter their number and tap ‘Send’.",
-            stepsTitle: " Steps to Send Money:",
-            steps: ["Tap \"Send Money\"", "Enter recipient’s phone number", "Type the amount", "Add a note (optional)", "Confirm and send — it’s instant"],
-            link: "/case-study/detail/financial-transformation-with-⎯-finpro",
-            imagePosition: "right"
-        }
-    ]
 
     return (
         <section className='py-2'>
             <div className="py-[4rem] lg:py-[8rem] bg-bg-grey-2">
                 <Container>
-                    <Row className='justify-between mb-[2rem] sm:mb-[3rem] lg:mb-[4rem]'>
-                        <Col md={6} className='lg:my-auto'>
-                            <h2 className='mb-4'>How Shamadhan Works</h2>
-                            <p className=''>
-                                From wallet recharge to QR payments —<br/>
-                                Here’s how users get things done with Shamadhan Pay.
+                    {/* Section Header */}
+                    <Row className='justify-between mb-[2.5rem] sm:mb-[3.5rem] lg:mb-[5rem]'>
+                        <Col md={7} className='lg:my-auto'>
+                            <span className="inline-block text-xs font-bold uppercase tracking-[0.18em] mb-4" style={{ color: '#6373AD' }}>
+                                Seamless Experience
+                            </span>
+                            <h2 className='mb-3 font-InterTight font-bold text-gray-900' style={{ letterSpacing: '-0.02em' }}>
+                                How Shamadhan Works
+                            </h2>
+                            <p className='text-gray-500 text-lg leading-relaxed max-w-xl'>
+                                From wallet recharge to QR payments — every step of Shamadhan Pay is designed to be effortless.
                             </p>
                         </Col>
                     </Row>
-                    <div className="grid grid-rows-1 gap-y-6">
+
+                    {/* Cards */}
+                    <div className="flex flex-col gap-6">
                         {cards.map((card, index) => (
-                            <div key={index} className="w-full p-3 bg-white rounded-[12px]">
-                                <Row className='justify-between gap-y-3'>
-                                    <Col md={5} className={`my-auto rounded-[8px] ${card.imagePosition === 'right' ? 'order-1 md:!order-2' : ''}`}>
-                                        <img className="rounded-[8px]" src={originalUrl + card.image} alt={card.title} />
+                            <div
+                                key={index}
+                                className="w-full bg-white rounded-[20px] overflow-hidden"
+                                style={{ boxShadow: '0 2px 24px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.05)' }}
+                            >
+                                <Row className='g-0 justify-between'>
+                                    {/* Image Column */}
+                                    <Col
+                                        md={5}
+                                        className={`${card.imagePosition === 'right' ? 'order-1 md:!order-2' : ''}`}
+                                        style={{ minHeight: '360px' }}
+                                    >
+                                        <div className="w-full h-full relative overflow-hidden" style={{ minHeight: '360px' }}>
+                                            {/* Coloured gradient overlay on image */}
+                                            <div
+                                                className="absolute inset-0 z-10"
+                                                style={{
+                                                    background: `linear-gradient(135deg, ${card.tagColor}22 0%, transparent 60%)`,
+                                                }}
+                                            />
+                                            <img
+                                                className="w-full h-full object-cover"
+                                                style={{ minHeight: '360px' }}
+                                                src={originalUrl + card.image}
+                                                alt={card.title}
+                                            />
+                                        </div>
                                     </Col>
-                                    <Col md={7} className={`my-auto ${card.imagePosition === 'right' ? 'md:!order-1 order-2' : ''}`}>
-                                        <div className="lg:px-[4rem]">
-                                            <h4 className='mb-3'>{card.title}</h4>
-                                            <p className='mb-4'>{card.description}</p>
-                                            <h6 className='mb-3'>{card.stepsTitle}</h6>
-                                            <ul className="pl-6 list-decimal mb-6">
-                                                {card.steps.map((step, stepIndex) => (
-                                                    <li key={stepIndex}>{step}</li>
+
+                                    {/* Text Column */}
+                                    <Col
+                                        md={7}
+                                        className={`my-auto ${card.imagePosition === 'right' ? 'md:!order-1 order-2' : ''}`}
+                                    >
+                                        <div className="p-8 lg:p-12">
+
+                                            {/* Pill Tag */}
+                                            <div className="mb-5">
+                                                <span
+                                                    className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] px-4 py-2 rounded-full border"
+                                                    style={{
+                                                        color: card.tagColor,
+                                                        background: card.tagBg,
+                                                        borderColor: `${card.tagColor}30`,
+                                                    }}
+                                                >
+                                                    <span
+                                                        className="w-1.5 h-1.5 rounded-full flex-shrink-0"
+                                                        style={{ background: card.tagColor }}
+                                                    />
+                                                    {card.tag}
+                                                </span>
+                                            </div>
+
+                                            {/* Title */}
+                                            <h3
+                                                className="font-InterTight font-bold text-gray-900 mb-3 leading-tight"
+                                                style={{ letterSpacing: '-0.02em' }}
+                                            >
+                                                {card.title}
+                                            </h3>
+
+                                            {/* Description */}
+                                            <p className="text-gray-500 text-base lg:text-lg leading-relaxed mb-7">
+                                                {card.description}
+                                            </p>
+
+                                            {/* Gradient Divider */}
+                                            <div
+                                                className="h-px mb-6 rounded-full"
+                                                style={{ background: `linear-gradient(to right, ${card.tagColor}50, transparent)` }}
+                                            />
+
+                                            {/* Steps Label */}
+                                            <p
+                                                className="text-[11px] font-bold uppercase tracking-[0.18em] mb-4"
+                                                style={{ color: card.tagColor }}
+                                            >
+                                                {card.stepsTitle}
+                                            </p>
+
+                                            {/* Steps List */}
+                                            <ol className="space-y-3">
+                                                {card.steps.map((step, si) => (
+                                                    <li key={si} className="flex items-start gap-4">
+                                                        {/* Numbered Chip */}
+                                                        <span
+                                                            className="flex-shrink-0 w-7 h-7 rounded-lg flex items-center justify-center text-xs font-bold mt-0.5"
+                                                            style={{
+                                                                background: card.tagBg,
+                                                                color: card.tagColor,
+                                                                border: `1px solid ${card.tagColor}25`,
+                                                            }}
+                                                        >
+                                                            {si + 1}
+                                                        </span>
+                                                        <span className="text-gray-700 text-sm lg:text-base font-medium leading-snug pt-1">
+                                                            {step}
+                                                        </span>
+                                                    </li>
                                                 ))}
-                                            </ul>
-                                            {/*<ActionBtn link={card.link} title="Get Started" />*/}
+                                            </ol>
                                         </div>
                                     </Col>
                                 </Row>
