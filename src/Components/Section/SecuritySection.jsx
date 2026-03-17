@@ -6,7 +6,7 @@ import useHostname from '@/Components/Provider/HostnameProvider'
 const SecurityCard = ({ icon, category, title, description, originalUrl }) => {
     return (
         <div className='sec-card'>
-            <div className='security-icon bg-bg-grey-1'>
+            <div className='security-icon bg-bg-grey-2'>
                 <img src={originalUrl + `/content/security/${icon}.svg`} alt=""/>
                 <h6>{category}</h6>
             </div>

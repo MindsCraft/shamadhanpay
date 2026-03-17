@@ -6,13 +6,14 @@
 @layer base {
     html,
     body {
-        @apply text-gray-800 font-Inter;
+        @apply text-gray-900 font-Inter;
     }
 
     /* Apply Inter Tight to all headings */
     h1, h2, h3, h4, h5, h6 {
         font-family: 'Inter Tight', sans-serif;
-        color: #424143;
+        /* color: #424143; */
+        @apply text-gray-900;
     }
 
     /* H1 / Page Header Styling */
@@ -160,15 +161,23 @@
 @layer components {
     /* Button Link Component */
     .btn-link {
-        @apply inline-flex items-center gap-2 font-semibold transition-colors;
+        @apply inline-flex items-center font-semibold transition-colors text-gray-900;
         font-size: 18px;
         text-decoration: none;
-        color: #424143; /* Primary dark color (text-primary) */
+        gap: 4px;
+        align-self: flex-end;
+    }
+    .btn-link svg {
+        @apply bg-bg-grey-2;
+        height: 36px;
+        width: 36px;
+        padding: 4px;
+        border-radius: 50%;
     }
 
     .btn-link:hover {
         color: #6373AD; /* Primary blue color */
-        text-decoration: underline;
+        @apply text-blue-900;
     }
 
     /* Text Color Utilities - Based on Style Guide */
@@ -711,21 +720,33 @@ otating Gradient Border Animation */
 }
 .sec-card .security-icon {
     display: inline-flex;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     gap: 6px;
-    padding: 4px 12px 4px 4px;
+    padding: 4px 12px 4px 6px;
     align-items: center;
-    border-radius: 6px;
+    border-radius: 4px;
 }
 .sec-card .security-icon img {
     /*padding: 4px;*/
     /*background: white;*/
     /*border-radius: 4px;*/
+    height: 16px;
+    width: 16px;
 }
 .sec-card h6 {
-    font-size: 16px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    font-weight: 600;
 }
-.sec-card p {}
+.sec-card h5 {
+    font-size: 20px;
+    letter-spacing: 0;
+    font-weight: 600;
+}
+.sec-card p {
+    font-size: 16px;
+    font-weight: 500;
+}
 
 .campaign .swiper {
     overflow: visible !important;
