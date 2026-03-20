@@ -2,8 +2,9 @@ import React, { Fragment } from 'react'
 import Head from 'next/head'
 import NewNavbar from '../Nav/NewNavbar';
 import Footer from '../Nav/Footer';
+import FooterAlternative from '../Nav/FooterAlternative';
 
-const LandingLayout = ({ children, title = "Landing Page", description = "Landing page description", navbar = true, footer = true }) => {
+const LandingLayout = ({ children, title = "Landing Page", description = "Landing page description", navbar = true, footer = true, footerType = 1 }) => {
     React.useEffect(() => {
         const observerOptions = {
             threshold: 0.15,
@@ -45,7 +46,9 @@ const LandingLayout = ({ children, title = "Landing Page", description = "Landin
                 {children}
 
                 {
-                    footer ? <Footer /> : ""
+                    footer ? (
+                        footerType === 1 ? <Footer /> : <FooterAlternative />
+                    ) : ""
                 }
             </div>
 

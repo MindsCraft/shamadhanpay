@@ -87,9 +87,6 @@ const HowItWorksSection = () => {
                     {/* Section Header */}
                     <Row className='justify-between mb-[2.5rem] sm:mb-[3.5rem] lg:mb-[5rem]'>
                         <Col md={7} className='lg:my-auto'>
-                            <span className="inline-block text-xs font-bold uppercase tracking-[0.18em] mb-4" style={{ color: '#6373AD' }}>
-                                Seamless Experience
-                            </span>
                             <h2 className='mb-3 font-InterTight font-bold text-gray-900' style={{ letterSpacing: '-0.02em' }}>
                                 How Shamadhan Works
                             </h2>
@@ -109,11 +106,11 @@ const HowItWorksSection = () => {
                                 <Row className='g-0 justify-between'>
                                     {/* Image Column */}
                                     <Col
+                                        lg={5}
                                         md={6}
-                                        className={`${card.imagePosition === 'right' ? 'order-1 md:!order-2' : ''}`}
-                                        style={{ padding: 0, minHeight: '400px' }}
+                                        className={`p-0 h-[350px] sm:h-[450px] md:h-[550px] lg:h-[620px] lg:!w-[45%] lg:!flex-[0_0_45%] lg:!max-w-[45%] ${card.imagePosition === 'right' ? 'order-1 md:!order-2' : ''}`}
                                     >
-                                        <div style={{ position: 'relative', width: '100%', height: '100%', minHeight: '400px', padding: '12px' }}>
+                                        <div className="relative w-full h-full p-3">
                                             <div
                                                 style={{
                                                     position: 'absolute',
@@ -141,8 +138,9 @@ const HowItWorksSection = () => {
 
                                     {/* Text Column */}
                                     <Col
+                                        lg={7}
                                         md={6}
-                                        className={`my-auto ${card.imagePosition === 'right' ? 'md:!order-1 order-2' : ''}`}
+                                        className={`my-auto lg:!w-[55%] lg:!flex-[0_0_55%] lg:!max-w-[55%] ${card.imagePosition === 'right' ? 'md:!order-1 order-2' : ''}`}
                                     >
                                         <div className="p-8 lg:p-12">
 
@@ -180,7 +178,7 @@ const HowItWorksSection = () => {
 
                                             {/* Steps Label */}
                                             <p
-                                                className="text-[11px] font-bold uppercase tracking-[0.18em] mb-4"
+                                                className="text-[13px] font-bold uppercase tracking-[0.12em] mb-4"
                                                 style={{ color: card.tagColor }}
                                             >
                                                 {card.stepsTitle}
@@ -196,7 +194,6 @@ const HowItWorksSection = () => {
                                                             style={{
                                                                 background: card.tagBg,
                                                                 color: card.tagColor,
-                                                                border: `1px solid ${card.tagColor}25`,
                                                             }}
                                                         >
                                                             {si + 1}

@@ -29,63 +29,34 @@ const NavigationArrow = ({ direction, onClick, originalUrl }) => {
 // Campaign Card Component
 const CampaignCard = ({ emoji, tagline, description, audience, cta, image, originalUrl }) => {
     return (
-        <div className="bg-bg-grey-1 rounded-[12px] overflow-hidden flex campaign-card" style={{}}>
+        <div className="bg-bg-grey-1 rounded-[12px] overflow-hidden flex flex-col lg:flex-row campaign-card">
             {/* Content Section */}
-            <div className="p-6 lg:px-12 my-auto w-[40%]">
-                <h3 className="mb-4 text-black">{tagline}</h3>
-                <p className="leading-relaxed text__18">{description}</p>
-                {/*<div className="">*/}
-                {/*    <span className="text-xs font-semibold text-brand-primary uppercase tracking-wide">*/}
-                {/*        For: {audience}*/}
-                {/*    </span>*/}
-                {/*</div>*/}
-
-
+            <div className="p-8 lg:p-12 my-auto w-full lg:w-[40%] text-left">
+                <h3 className="mb-4 text-black text-2xl lg:text-3xl font-bold">{tagline}</h3>
+                <p className="leading-relaxed text__18 opacity-80">{description}</p>
             </div>
             {/* Image Section */}
-            <div className="relative overflow-hidden p-2 w-[60%]">
+            <div className="relative overflow-hidden p-2 w-full lg:w-[60%]">
                 <img
                     src={`${originalUrl}/content/campaigns/${image}`}
                     alt={tagline}
-                    className="w-full h-[600px] object-cover  rounded-[8px] "
+                    className="w-full h-[320px] lg:h-[600px] object-cover rounded-[8px]"
                 />
-                {/*<div className="absolute top-4 left-4 text-5xl">{emoji}</div>*/}
                 <button
-                    className="absolute bottom-6 right-6 w-10 h-10 bg-bg-dark hover:bg-black rounded-full flex items-center justify-center text-white transition-colors"
+                    className="absolute bottom-6 right-6 w-10 h-10 bg-bg-dark hover:bg-black rounded-full flex items-center justify-center text-white transition-colors shadow-lg"
                     aria-label={`Learn more about ${tagline}`}
                 >
                     <img
                         src={`${originalUrl}/content/icons/arrow-link.svg`}
                         alt=""
-                        className="w-5 h-5"
+                        className="w-5 h-5 focus:invert"
                     />
                 </button>
             </div>
         </div>
-
-        //  <div className="bg-bg-grey-1 rounded-[12px] overflow-hidden flex position-relative" style={{boxShadow:'0 13px 27px -5px rgba(50, 50, 93, 0.02), 0 8px 16px -8px rgba(0, 0, 0, 0.1)'}}>
-        //     <div className="relative overflow-hidden p-2 w-full">
-        //         <img
-        //           src={`${originalUrl}/content/campaigns/${image}`}
-        //           alt={tagline}
-        //           className="w-full h-full object-cover  rounded-[8px] "
-        //         />
-        //     </div>
-        //      <div className="campaign-overlay">
-        //          <h3 className="mb-2 text-black">{tagline}</h3>
-        //          <p className="leading-relaxed text-black">{description}</p>
-        //          <button className="absolute bottom-6 right-6 w-10 h-10 bg-bg-dark hover:bg-black rounded-full flex items-center justify-center text-white transition-colors"
-        //                  aria-label={`Learn more about ${tagline}`}
-        //          ><img
-        //            src={`${originalUrl}/content/icons/arrow-link.svg`}
-        //            alt=""
-        //            className="w-5 h-5"
-        //          />
-        //          </button>
-        //      </div>
-        // </div>
     )
 }
+
 
 const CampaignSliderSection = () => {
     const originalUrl = useHostname()
@@ -179,30 +150,30 @@ const CampaignSliderSection = () => {
     return (
         <section className='py-[4rem] lg:py-[8rem] campaign'>
             <Container>
-                <Row className='justify-between mb-[2rem] sm:mb-[3rem] lg:mb-[4rem]'>
-                    <Col md={6} className='lg:my-auto'>
-                        <h2 className='mb-0'>Get More with Shamadhan Pay</h2>
+                <Row className='justify-between mb-8 lg:mb-16 gap-y-6'>
+                    <Col lg={6} className='my-auto'>
+                        <h2 className='mb-0 text-3xl lg:text-5xl font-bold'>Get More with Shamadhan Pay</h2>
                     </Col>
-                    <Col md={5} className='flex justify-between flex-column align-items-end'>
-                        <p className='mb-4'>
+                    <Col lg={5} className='flex flex-col justify-end lg:items-end'>
+                        <p className='mb-6 text-lg lg:text-right opacity-80'>
                             From cashback to referral rewards — we’re launching with benefits just for you.
                         </p>
-                        <a href="/features" className="btn-link mt-3">
+                        <a href="/features" className="btn-link lg:ml-auto">
                             <span>All Campaigns</span>
                             <svg
-                              width="24"
-                              height="24"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="w-5 h-5"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="w-5 h-5"
                             >
                                 <path
-                                  d="M7 17L17 7M17 7H7M17 7V17"
-                                  stroke="currentColor"
-                                  strokeWidth="2"
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
+                                    d="M7 17L17 7M17 7H7M17 7V17"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
                                 />
                             </svg>
                         </a>

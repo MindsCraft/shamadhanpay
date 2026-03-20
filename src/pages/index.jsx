@@ -8,7 +8,7 @@ import HeroSection from '@/Components/Section/HeroSection'
 import FeatureCardsSection from "@/Components/Section/FeatureCardsSection"
 import SecuritySection from '@/Components/Section/SecuritySection'
 import CampaignSliderSection from '@/Components/Section/CampaignSliderSection'
-import CTASection from '@/Components/Section/CTASection'
+import CTASectionAlternative3 from '@/Components/Section/CTASectionAlternative3'
 import NewsSection from '@/Components/Section/NewsSection'
 import FAQSection from '@/Components/Section/FAQSection'
 import HowItWorksSection from "@/Components/Section/HowItWorksSection";
@@ -87,7 +87,7 @@ const Index = () => {
                 </div>
 
                 <div className="reveal-up">
-                    <CTASection type={1} />
+                    <CTASectionAlternative3 />
                 </div>
 
             </LandingLayout>

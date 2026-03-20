@@ -8,7 +8,7 @@ import HeroSection from '@/Components/Section/HeroSection'
 import FeatureCardsSection from "@/Components/Section/FeatureCardsSection"
 import SecuritySection from '@/Components/Section/SecuritySection'
 import CampaignSliderSection from '@/Components/Section/CampaignSliderSection'
-import CTASection from '@/Components/Section/CTASection'
+import CTASectionAlternative3 from '@/Components/Section/CTASectionAlternative3'
 import NewsSection from '@/Components/Section/NewsSection'
 import FAQSection from '@/Components/Section/FAQSection'
 import HowItWorksSection from "@/Components/Section/HowItWorksSection";
@@ -56,7 +56,11 @@ const Landing = () => {
 
     return (
         <Fragment>
-            <LandingLayout title='Shamadhan Pay - Your Simple Wallet' description='Experience the ultimate in secure and smart digital payments. Send money, pay bills, and more.'>
+            <LandingLayout
+                title='Shamadhan Pay - Your Simple Wallet'
+                description='Experience the ultimate in secure and smart digital payments. Send money, pay bills, and more.'
+                footerType={1}
+            >
 
                 <HeroSection />
 
@@ -72,7 +76,7 @@ const Landing = () => {
 
                 <FAQSection />
 
-                <CTASection type={1} />
+                <CTASectionAlternative3 />
 
             </LandingLayout>
         </Fragment>
