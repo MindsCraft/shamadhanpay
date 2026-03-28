@@ -1,14 +1,44 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
+import { useRouter } from 'next/router';
 import useHostname from '../Provider/HostnameProvider';
 import { Container } from 'react-bootstrap';
 import Link from 'next/link';
 import DownloadIcon from '../svg/DownloadIcon';
+import UserAccountIcon from '../svg/UserAccountIcon';
 
 const NewNavbar = () => {
     const originalUrl = useHostname();
+    const router = useRouter();
 
     const [ToogleMenuResponsive, setToogleMenuResponsive] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
     const [ActiveMenu, setActiveMenu] = useState("")
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 20) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    // Stop scrolling when mobile menu is open
+    useEffect(() => {
+        if (ToogleMenuResponsive) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [ToogleMenuResponsive]);
+
     const [activeFeatureTab, setActiveFeatureTab] = useState("send-money")
     const [selectedLanguage, setSelectedLanguage] = useState("EN")
     const [showLanguageDropdown, setShowLanguageDropdown] = useState(false)
@@ -48,13 +78,13 @@ const NewNavbar = () => {
     return (
         <Fragment>
             {/* Main Navbar */}
-            <div className="fixed w-full z-[99] top-0 bg-white/50 backdrop-blur-2xl">
+            <div className={`fixed w-full z-[99] top-0 transition-all duration-300 ${scrolled ? 'glass-header py-0' : 'bg-transparent py-3'}`}>
                 <Container>
                     <div className="flex w-full items-center justify-between py-2.5">
                         {/* Left Side - Logo and Navigation Links */}
                         <div className="flex items-center gap-10">
                             <Link href="/" className='inline-block'>
-                                <img src={originalUrl + "/content/spay-logo-square.svg"} alt="Shamadhan Pay" style={{ maxHeight: '56px' }} />
+                                <img src={originalUrl + "/content/spay-logo.svg"} alt="Shamadhan Pay" style={{ maxHeight: '28px' }} />
                             </Link>
 
                             {/* Desktop Navigation Links */}
@@ -121,78 +151,225 @@ const NewNavbar = () => {
                                 <DownloadIcon width={18} height={18} fill="white" />
                             </Link>
 
-                            {/* Mobile Menu Button */}
-                            <div className="lg:hidden">
-                                <div onClick={() => setToogleMenuResponsive(!ToogleMenuResponsive)} className={" relative p-1 barIcon w-[32px] h-[32px] cursor-pointer ml-auto rounded-lg hover:bg-gray-100 transition-colors " + (ToogleMenuResponsive ? "active" : "")}>
-                                    <div className={"bg-gray-700 h-[2px] w-full rounded"}></div>
-                                    <div className={"bg-gray-700 h-[2px] w-full rounded mt-1"}></div>
-                                    <div className={"bg-gray-700 h-[2px] w-full rounded mt-1"}></div>
-                                </div>
+                            {/* Language Switcher — Mobile (Top Bar) — Matching Desktop style */}
+                            <div className="lg:hidden relative mr-1">
+                                <button
+                                    onClick={() => setShowLanguageDropdown(!showLanguageDropdown)}
+                                    className="flex items-center gap-1.5 px-2 py-2 rounded-lg transition-colors hover:bg-gray-100"
+                                    style={{ color: scrolled ? '#1F2937' : '#111827' }}
+                                >
+                                    <span className="text-[13px] font-bold">{selectedLanguage}</span>
+                                    <img 
+                                        src={originalUrl + "/images/Arrow Down.svg"} 
+                                        className={'transition-all duration-300 w-2.5 ' + (showLanguageDropdown ? "-rotate-180" : "rotate-0")} 
+                                        alt="" 
+                                        style={{ filter: scrolled ? 'none' : 'brightness(0) invert(0)' }}
+                                    />
+                                </button>
+
+                                {showLanguageDropdown && (
+                                    <div className="absolute top-full right-0 mt-2 bg-white rounded-lg shadow-xl border border-gray-100 py-1 min-w-[100px] z-[120]">
+                                        {languages.map((lang) => (
+                                            <button
+                                                key={lang.code}
+                                                onClick={() => handleLanguageChange(lang.code)}
+                                                className={`w-full text-left px-3 py-2 text-[13px] hover:bg-gray-50 transition-colors ${
+                                                    selectedLanguage === lang.code ? 'font-bold text-black' : 'text-gray-600'
+                                                }`}
+                                            >
+                                                {lang.name}
+                                            </button>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
+
+                            {/* Mobile Menu Button — Premium Pill Design */}
+                            <button
+                                className="lg:hidden flex items-center gap-3 px-4 py-2.5 rounded-full border transition-all duration-300 group overflow-hidden"
+                                onClick={() => setToogleMenuResponsive(!ToogleMenuResponsive)}
+                                aria-label={ToogleMenuResponsive ? 'Close menu' : 'Open menu'}
+                                aria-expanded={ToogleMenuResponsive}
+                                style={{
+                                    background: 'rgba(255,255,255,0.95)',
+                                    backdropFilter: 'blur(12px)',
+                                    borderColor: ToogleMenuResponsive ? 'rgba(0,0,0,0.1)' : 'rgba(0,0,0,0.06)',
+                                    boxShadow: ToogleMenuResponsive ? '0 4px 12px rgba(0,0,0,0.05)' : 'none',
+                                }}
+                            >
+                                {/* Staggered morphing icon */}
+                                <div className="relative w-5 h-5 flex flex-col items-center justify-center gap-[6px]">
+                                    <span style={{
+                                        display: 'block',
+                                        width: '100%',
+                                        height: '2px',
+                                        borderRadius: '2px',
+                                        background: '#111827',
+                                        transformOrigin: 'center',
+                                        transform: ToogleMenuResponsive ? 'translateY(4px) rotate(45deg)' : 'none',
+                                        transition: 'transform 0.4s cubic-bezier(0.4,0,0.2,1)',
+                                    }} />
+                                    <span style={{
+                                        display: 'block',
+                                        width: ToogleMenuResponsive ? '100%' : '70%',
+                                        height: '2px',
+                                        borderRadius: '2px',
+                                        background: '#111827',
+                                        alignSelf: 'flex-start',
+                                        transformOrigin: 'center',
+                                        transform: ToogleMenuResponsive ? 'translateY(-4px) rotate(-45deg)' : 'none',
+                                        transition: 'all 0.4s cubic-bezier(0.4,0,0.2,1)',
+                                    }} />
+                                </div>
+                                {/* Label text */}
+                                <span 
+                                    className="text-[13px] font-bold tracking-[0.05em] uppercase transition-all duration-300"
+                                    style={{
+                                        color: '#111827',
+                                        width: ToogleMenuResponsive ? '44px' : '40px',
+                                    }}
+                                >
+                                    {ToogleMenuResponsive ? 'Close' : 'Menu'}
+                                </span>
+                            </button>
                         </div>
                     </div>
                 </Container>
             </div>
 
-            {/* Mobile Menu */}
-            <div className={"fixed w-full z-[90] top-20 transition-all duration-300 lg:hidden  " + (ToogleMenuResponsive ? "opacity-100" : "opacity-0 pointer-events-none max-h-0 overflow-hidden")}>
-                <Container>
-                    <div className="py-6 bg-white border-b border-gray-100">
-                        {/* Mobile Action Buttons */}
-                        <div className="px-4 pb-4 border-b border-gray-100 mb-4 space-y-3">
-                            <Link href="/download" className='flex items-center justify-center gap-2 w-full rounded-md px-6 py-3 bg-[#6373AD] text-white font-semibold hover:bg-[#556299] transition-all'>
-                                <span>Download App</span>
-                                <DownloadIcon width={20} height={20} fill="white" />
-                            </Link>
-                            <Link href="/login" className='block w-full text-center rounded-md px-6 py-3 border-2 border-gray-300 text-gray-700 font-semibold hover:bg-gray-100 transition-all'>
-                                Login
-                            </Link>
-                        </div>
+            {/* Mobile Menu — Full-viewport Light Overlay */}
+            <div
+                className="lg:hidden fixed inset-0 z-[110]"
+                style={{
+                    pointerEvents: ToogleMenuResponsive ? 'auto' : 'none',
+                    opacity: ToogleMenuResponsive ? 1 : 0,
+                    transition: 'opacity 0.4s cubic-bezier(0.4,0,0.2,1)',
+                    background: '#ffffff',
+                }}
+            >
+                {/* Subtle light gradient pattern */}
+                <div style={{
+                    position: 'absolute',
+                    top: '-10%',
+                    right: '-15%',
+                    width: '420px',
+                    height: '420px',
+                    borderRadius: '50%',
+                    background: 'radial-gradient(circle, rgba(0,0,0,0.03) 0%, transparent 70%)',
+                    pointerEvents: 'none',
+                }} />
 
-                        {/* Mobile Language Switcher */}
-                        <div className="px-4 pb-4 border-b border-gray-100 mb-4">
-                            <p className="text-sm font-medium text-gray-700 mb-2">Language</p>
-                            <div className="flex items-center bg-gray-50 rounded-lg p-1 w-fit">
-                                {languages.map((lang) => (
-                                    <button
-                                        key={lang.code}
-                                        onClick={() => setSelectedLanguage(lang.code)}
-                                        className={`px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 ${
-                                            selectedLanguage === lang.code
-                                                ? 'text-gray-900 bg-white shadow-sm'
-                                                : 'text-gray-600 hover:bg-white hover:text-gray-900'
-                                        }`}
-                                        title={lang.name}
-                                    >
-                                        {lang.name}
-                                    </button>
-                                ))}
-                            </div>
-                        </div>
 
-                        <div className="space-y-4 ">
-                            {/* Offers */}
-                            <div className="border-b border-gray-100 pb-4 px-4">
-                                <p className='text__18 font-medium text-gray-800'>Offers</p>
-                            </div>
+                {/* Inner layout */}
+                <div className="flex flex-col h-full px-6 pt-6 pb-10">
 
-                            {/* Individual */}
-                            <div className="border-b border-gray-100 pb-4 px-4">
-                                <p className='text__18 font-medium text-gray-800'>Individual</p>
-                            </div>
-
-                            {/* Business */}
-                            <div className="border-b border-gray-100 pb-4 px-4">
-                                <p className='text__18 font-medium text-gray-800'>Business</p>
-                            </div>
-
-                            {/* Company */}
-                            <div className="pb-4 px-4">
-                                <p className='text__18 font-medium text-gray-800'>Company</p>
-                            </div>
-                        </div>
+                    {/* Top bar */}
+                    <div className="flex items-center justify-between mb-10">
+                        <Link href="/" onClick={() => setToogleMenuResponsive(false)}>
+                            <img src={originalUrl + '/content/spay-logo.svg'} alt="Shamadhan Pay" style={{ maxHeight: '28px' }} />
+                        </Link>
+                        <button
+                            onClick={() => setToogleMenuResponsive(false)}
+                            className="w-10 h-10 flex items-center justify-center rounded-xl transition-colors"
+                            style={{ background: 'rgba(0,0,0,0.05)' }}
+                            aria-label="Close menu"
+                        >
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M12 4L4 12M4 4l8 8" stroke="#111827" strokeWidth="2" strokeLinecap="round"/>
+                            </svg>
+                        </button>
                     </div>
-                </Container>
+
+                    {/* Nav Links — large numbered items */}
+                    <nav className="flex-1">
+                        {[
+                            { num: '00', label: 'Home', href: '/' },
+                            { num: '01', label: 'Offers', href: '/offers' },
+                            { num: '02', label: 'Individual', href: '/individual' },
+                            { num: '03', label: 'Business', href: '/business' },
+                            { num: '04', label: 'Company', href: '/company' },
+                        ].map((item, i) => {
+                            const isActive = router.asPath === item.href;
+                            return (
+                                <Link
+                                    key={i}
+                                    href={item.href}
+                                    onClick={() => setToogleMenuResponsive(false)}
+                                    className="group flex items-center justify-between py-4 border-b"
+                                    style={{
+                                        borderColor: 'rgba(0,0,0,0.05)',
+                                        transform: ToogleMenuResponsive ? 'translateY(0)' : 'translateY(20px)',
+                                        opacity: ToogleMenuResponsive ? 1 : 0,
+                                        transition: `transform 0.4s cubic-bezier(0.4,0,0.2,1) ${i * 0.07}s, opacity 0.35s ease ${i * 0.07}s`,
+                                    }}
+                                >
+                                    <div className="flex items-baseline gap-4 relative">
+                                        <span style={{ 
+                                            fontSize: '11px', 
+                                            fontWeight: 700, 
+                                            color: isActive ? '#111827' : 'rgba(0,0,0,0.2)', 
+                                            letterSpacing: '0.1em', 
+                                            lineHeight: 1 
+                                        }}>
+                                            {item.num}
+                                        </span>
+                                            <span style={{ 
+                                                fontSize: '18px', 
+                                                fontWeight: isActive ? 700 : 600, 
+                                                color: isActive ? '#000000' : '#111827', 
+                                                opacity: isActive ? 1 : 0.8,
+                                                letterSpacing: '-0.01em', 
+                                                lineHeight: 1.1, 
+                                                fontFamily: "'Inter Tight', sans-serif" 
+                                            }}>
+                                                {item.label}
+                                            </span>
+                                        </div>
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                        style={{ 
+                                            color: isActive ? '#000000' : 'rgba(0,0,0,0.1)', 
+                                            transform: isActive ? 'translateX(4px)' : 'none',
+                                            transition: 'color 0.2s, transform 0.2s' 
+                                        }}
+                                        className="group-hover:!text-black group-hover:translate-x-1"
+                                    >
+                                        <path d="M5 10h10M11 6l4 4-4 4" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
+                                    </svg>
+                                </Link>
+                            )
+                        })}
+                    </nav>
+
+                    {/* CTA buttons */}
+                    <div
+                        className="space-y-4 pt-4"
+                        style={{
+                            transform: ToogleMenuResponsive ? 'translateY(0)' : 'translateY(16px)',
+                            opacity: ToogleMenuResponsive ? 1 : 0,
+                            transition: 'transform 0.4s 0.32s, opacity 0.35s 0.32s',
+                        }}
+                    >
+                        <Link
+                            href="/download"
+                            onClick={() => setToogleMenuResponsive(false)}
+                            className="flex items-center justify-center gap-2 w-full rounded-md py-3.5 bg-[#6373AD] hover:bg-[#556299] transition-all"
+                            style={{
+                                boxShadow: '0 4px 16px 0 rgba(99, 115, 173, 0.25)',
+                            }}
+                        >
+                            <span className="font-semibold text-white">Download App</span>
+                            <DownloadIcon width={20} height={20} fill="white" />
+                        </Link>
+                        <Link
+                            href="/register"
+                            onClick={() => setToogleMenuResponsive(false)}
+                            className="flex items-center justify-center gap-2 w-full rounded-md py-3.5 bg-white border border-gray-100 hover:bg-gray-50 transition-all font-semibold text-gray-700"
+                        >
+                            <span>Create Account</span>
+                            <UserAccountIcon width={18} height={18} fill="#4B5563" />
+                        </Link>
+                    </div>
+                </div>
             </div>
 
             {/* Mega Menu - Features Dropdown */}
@@ -460,12 +637,10 @@ const NewNavbar = () => {
                 </Container>
             </div>
 
-            {/* Background Overlays */}
             <div onClick={() => {
                 setActiveMenu("")
                 setShowLanguageDropdown(false)
             }} className={"fixed w-full h-full left-0 top-0 z-[70] transition-all duration-200 lg:block hidden " + (ActiveMenu !== "" || showLanguageDropdown ? "bg-white/20 backdrop-blur-lg" : "opacity-0 pointer-events-none")}></div>
-            <div onClick={() => setToogleMenuResponsive(!ToogleMenuResponsive)} className={"fixed w-full h-full left-0 top-0 z-[70] transition-all duration-200 lg:hidden " + (ToogleMenuResponsive ? "bg-black opacity-60" : "opacity-0 pointer-events-none")}></div>
         </Fragment>
     )
 }

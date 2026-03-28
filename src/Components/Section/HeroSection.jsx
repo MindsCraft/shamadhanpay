@@ -8,6 +8,20 @@ import UserAccountIcon from "@/Components/svg/UserAccountIcon";
 const HeroSection = () => {
     const originalUrl = useHostname()
 
+    const [btnOffset, setBtnOffset] = React.useState({ x: 0, y: 0 });
+
+    const handleMagnetic = (e) => {
+        const btn = e.currentTarget;
+        const rect = btn.getBoundingClientRect();
+        const x = (e.clientX - rect.left - rect.width / 2) * 0.2;
+        const y = (e.clientY - rect.top - rect.height / 2) * 0.4;
+        setBtnOffset({ x, y });
+    };
+
+    const resetMagnetic = () => {
+        setBtnOffset({ x: 0, y: 0 });
+    };
+
     return (
         <section className='relative py-[80px] lg:py-[120px] overflow-hidden'>
             {/* Animated Liquid Blobs Background */}
@@ -34,18 +48,27 @@ const HeroSection = () => {
                         </div>
 
                         {/* Hero Message */}
-                        <h1 className='mb-6'>
+                        <h1 className='text-balance mb-6'>
                             Payments Made Simple, Secure, and Smart.
                         </h1>
                         {/* Secondary Description */}
-                        <p className='mb-12'>
+                        <p className='text__18 mb-12 opacity-80 max-w-[540px]'>
                             Send money, pay bills, and recharge instantly — all from one app.
                         </p>
 
                         {/* Buttons */}
                         <div className='flex flex-wrap items-center gap-4'>
                             {/* Primary Button */}
-                            <Link href="/download" className='inline-block rounded-md transition-all duration-300 px-6 py-3 bg-[#6373AD] hover:bg-[#556299]' style={{ boxShadow: '0 4px 16px 0 rgba(99, 115, 173, 0.25)' }}>
+                            <Link 
+                                href="/download" 
+                                onMouseMove={handleMagnetic}
+                                onMouseLeave={resetMagnetic}
+                                className='inline-block rounded-md transition-transform duration-200 ease-out px-6 py-3 bg-[#6373AD] hover:bg-[#556299]' 
+                                style={{ 
+                                    boxShadow: '0 4px 16px 0 rgba(99, 115, 173, 0.25)',
+                                    transform: `translate(${btnOffset.x}px, ${btnOffset.y}px)`
+                                }}
+                            >
                                 <p className="flex items-center gap-2">
                                     <span className='font-semibold text-white'>Download App</span>
                                     <DownloadIcon width={24} height={24} fill="white" />

@@ -8,7 +8,7 @@ import HeroSection from '@/Components/Section/HeroSection'
 import FeatureCardsSection from "@/Components/Section/FeatureCardsSection"
 import SecuritySection from '@/Components/Section/SecuritySection'
 import CampaignSliderSection from '@/Components/Section/CampaignSliderSection'
-import CTASection from '@/Components/Section/CTASection'
+import CTASectionAlternative3 from '@/Components/Section/CTASectionAlternative3'
 import NewsSection from '@/Components/Section/NewsSection'
 import FAQSection from '@/Components/Section/FAQSection'
 import HowItWorksSection from "@/Components/Section/HowItWorksSection";
@@ -56,23 +56,39 @@ const Index = () => {
 
     return (
         <Fragment>
-            <LandingLayout title='Landing Page - Healify' description='Layout description'>
+            <LandingLayout title='Shamadhan Pay - Payments Made Simple' description='Experience the ultimate in secure and smart digital payments. Send money, pay bills, and more.'>
 
-                <HeroSection />
+                <div className="reveal-up">
+                    <HeroSection />
+                </div>
 
-                <FeatureCardsSection />
+                <div className="reveal-up delay-100">
+                    <FeatureCardsSection />
+                </div>
 
-                <SecuritySection />
+                <div className="reveal-up delay-200">
+                    <SecuritySection />
+                </div>
 
-                <CampaignSliderSection />
+                <div className="reveal-up">
+                    <CampaignSliderSection />
+                </div>
 
-                <HowItWorksSection />
+                <div className="reveal-up">
+                    <HowItWorksSection />
+                </div>
 
-                <NewsSection />
+                <div className="reveal-up">
+                    <NewsSection />
+                </div>
 
-                <FAQSection />
+                <div className="reveal-up">
+                    <FAQSection />
+                </div>
 
-                <CTASection type={1} />
+                <div className="reveal-up">
+                    <CTASectionAlternative3 />
+                </div>
 
             </LandingLayout>
         </Fragment>
