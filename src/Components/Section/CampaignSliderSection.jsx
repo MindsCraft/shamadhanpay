@@ -152,7 +152,7 @@ const CampaignSliderSection = () => {
             <Container>
                 <Row className='justify-between mb-8 lg:mb-16 gap-y-6'>
                     <Col lg={6} className='my-auto'>
-                        <h2 className='mb-0 text-3xl lg:text-5xl font-bold'>Get More with Shamadhan Pay</h2>
+                        <h2 className='mb-0 text-3xl lg:text-5xl font-bold'>Get More with <br /> Shamadhan Pay</h2>
                     </Col>
                     <Col lg={5} className='flex flex-col justify-end lg:items-end'>
                         <p className='mb-6 text-lg lg:text-right opacity-80'>

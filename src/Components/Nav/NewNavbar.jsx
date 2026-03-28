@@ -83,7 +83,7 @@ const NewNavbar = () => {
                     <div className="flex w-full items-center justify-between py-2.5">
                         {/* Left Side - Logo and Navigation Links */}
                         <div className="flex items-center gap-10">
-                            <Link href="/" className='inline-block'>
+                            <Link href="#!" className='inline-block'>
                                 <img src={originalUrl + "/content/spay-logo.svg"} alt="Shamadhan Pay" style={{ maxHeight: '28px' }} />
                             </Link>
 
@@ -141,12 +141,12 @@ const NewNavbar = () => {
                             </div>
 
                             {/* Login Link - Desktop */}
-                            <Link href="/login" className='hidden lg:inline-block font-semibold transition-colors px-3 py-2'>
+                            <Link href="#!" className='hidden lg:inline-block font-semibold transition-colors px-3 py-2'>
                                 <span>Login</span>
                             </Link>
 
                             {/* Download App Button - Desktop */}
-                            <Link href="/download" className='hidden lg:inline-flex items-center gap-2 rounded-md px-3 py-2 bg-[#6373AD] text-white text__14 font-semibold hover:bg-[#556299] transition-all' style={{ boxShadow: '0 3px 8px 0 rgba(99, 115, 173, 0.2)'}}>
+                            <Link href="#!" className='hidden lg:inline-flex items-center gap-2 rounded-md px-3 py-2 bg-[#6373AD] text-white text__14 font-semibold hover:bg-[#556299] transition-all' style={{ boxShadow: '0 3px 8px 0 rgba(99, 115, 173, 0.2)'}}>
                                 <span>Download App</span>
                                 <DownloadIcon width={18} height={18} fill="white" />
                             </Link>
@@ -265,7 +265,7 @@ const NewNavbar = () => {
 
                     {/* Top bar */}
                     <div className="flex items-center justify-between mb-10">
-                        <Link href="/" onClick={() => setToogleMenuResponsive(false)}>
+                        <Link href="#!" onClick={() => setToogleMenuResponsive(false)}>
                             <img src={originalUrl + '/content/spay-logo.svg'} alt="Shamadhan Pay" style={{ maxHeight: '28px' }} />
                         </Link>
                         <button
@@ -283,11 +283,11 @@ const NewNavbar = () => {
                     {/* Nav Links — large numbered items */}
                     <nav className="flex-1">
                         {[
-                            { num: '00', label: 'Home', href: '/' },
-                            { num: '01', label: 'Offers', href: '/offers' },
-                            { num: '02', label: 'Individual', href: '/individual' },
-                            { num: '03', label: 'Business', href: '/business' },
-                            { num: '04', label: 'Company', href: '/company' },
+                            { num: '00', label: 'Home', href: '#!' },
+                            { num: '01', label: 'Offers', href: '#!' },
+                            { num: '02', label: 'Individual', href: '#!' },
+                            { num: '03', label: 'Business', href: '#!' },
+                            { num: '04', label: 'Company', href: '#!' },
                         ].map((item, i) => {
                             const isActive = router.asPath === item.href;
                             return (
@@ -350,7 +350,7 @@ const NewNavbar = () => {
                         }}
                     >
                         <Link
-                            href="/download"
+                            href="#!"
                             onClick={() => setToogleMenuResponsive(false)}
                             className="flex items-center justify-center gap-2 w-full rounded-md py-3.5 bg-[#6373AD] hover:bg-[#556299] transition-all"
                             style={{
@@ -361,7 +361,7 @@ const NewNavbar = () => {
                             <DownloadIcon width={20} height={20} fill="white" />
                         </Link>
                         <Link
-                            href="/register"
+                            href="#!"
                             onClick={() => setToogleMenuResponsive(false)}
                             className="flex items-center justify-center gap-2 w-full rounded-md py-3.5 bg-white border border-gray-100 hover:bg-gray-50 transition-all font-semibold text-gray-700"
                         >

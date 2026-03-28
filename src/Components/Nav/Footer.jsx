@@ -58,7 +58,7 @@ const Footer = () => {
                                         {col.links.map((link, lIdx) => (
                                             <li key={lIdx}>
                                                 <Link 
-                                                    href={link.href} 
+                                                    href="#!" 
                                                     className="text-[14px] text-gray-500 font-medium hover:text-[#6373AD] transition-all hover:translate-x-1 inline-block"
                                                 >
                                                     {link.name}
@@ -86,21 +86,26 @@ const Footer = () => {
                     </Col>
                     
                     <Col lg={4} className="mb-8 lg:mb-0">
-                        {/* Social Links (Premium Minimalist) */}
-                       <div className="flex justify-center gap-6">
+                        {/* Social Links (Premium Visuals) */}
+                        <div className="flex justify-center gap-4">
                             {[
-                                { name: 'fb', path: 'M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z' },
-                                { name: 'tw', path: 'M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z' },
-                                { name: 'ig', path: 'M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01M7.5 21h9a4.5 4.5 0 004.5-4.5v-9A4.5 4.5 0 0016.5 3h-9A4.5 4.5 0 003 7.5v9A4.5 4.5 0 007.5 21z' },
-                                { name: 'li', path: 'M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z M4 2a2 2 0 100 4 2 2 0 000-4z' }
+                                { name: 'Facebook', path: 'M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z' },
+                                { name: 'Twitter', path: 'M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z' },
+                                { name: 'Instagram', path: 'M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01M7.5 21h9a4.5 4.5 0 004.5-4.5v-9A4.5 4.5 0 0016.5 3h-9A4.5 4.5 0 007.5 21z' },
+                                { name: 'LinkedIn', path: 'M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z M4 2a2 2 0 100 4 2 2 0 000-4z' }
                             ].map((social, idx) => (
-                                <Link key={idx} href="#!" className="text-gray-400 hover:text-[#6373AD] transition-colors">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <Link 
+                                    key={idx} 
+                                    href="#!" 
+                                    className="w-10 h-10 rounded-full bg-white border border-gray-100 flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#6373AD] hover:border-[#6373AD] hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-md"
+                                    aria-label={social.name}
+                                >
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                         <path d={social.path} />
                                     </svg>
                                 </Link>
                             ))}
-                       </div>
+                        </div>
                     </Col>
 
                     <Col lg={4} className="flex justify-start lg:justify-end gap-6 items-center opacity-40 grayscale">
@@ -122,8 +127,8 @@ const Footer = () => {
                         © 2025 Shamadhanpay. Licensed by the Central Bank of Bangladesh.
                     </p>
                     <div className="flex gap-6">
-                        <Link href="/support" className="text-[13px] text-gray-400 font-bold hover:text-gray-600 transition-colors">Support</Link>
-                        <Link href="/status" className="text-[13px] text-gray-400 font-bold hover:text-gray-600 transition-colors">System Status</Link>
+                        <Link href="#!" className="text-[13px] text-gray-400 font-bold hover:text-gray-600 transition-colors">Support</Link>
+                        <Link href="#!" className="text-[13px] text-gray-400 font-bold hover:text-gray-600 transition-colors">System Status</Link>
                     </div>
                 </div>
             </Container>

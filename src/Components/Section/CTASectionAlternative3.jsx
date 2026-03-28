@@ -39,7 +39,7 @@ const CTASectionAlternative3 = ({
                                 </p>
                                 <div className="flex flex-col sm:flex-row gap-4">
                                     <Link 
-                                        href="/download" 
+                                        href="#!" 
                                         className='inline-block rounded-md transition-all duration-300 px-6 py-3 bg-[#6373AD] hover:bg-[#556299]' 
                                         style={{ boxShadow: '0 4px 16px 0 rgba(99, 115, 173, 0.25)' }}
                                     >
@@ -49,7 +49,7 @@ const CTASectionAlternative3 = ({
                                         </p>
                                     </Link>
                                     <Link 
-                                        href="/about" 
+                                        href="#!" 
                                         className='inline-block rounded-md transition-all duration-300 px-6 py-3 bg-white hover:bg-gray-50 border border-gray-200 shadow-sm'
                                     >
                                         <p className="flex items-center gap-2 mb-0 text-gray-700">
@@ -78,12 +78,14 @@ const CTASectionAlternative3 = ({
                                 <div className="relative w-full h-[500px] perspective-[1200px] flex justify-center items-center">
                                     {/* Layered Isometric Screen 1 (Back Shadow/Refraction) */}
                                     <div 
-                                        className="absolute w-[260px] h-[520px] bg-[#6373AD]/5 rounded-[32px] blur-[2px] border border-[#6373AD]/10"
+                                        className="absolute w-[260px] h-[520px] bg-white rounded-[32px] blur-[1px] border border-gray-100 overflow-hidden shadow-2xl"
                                         style={{ 
                                             transform: 'rotateX(15deg) rotateY(-15deg) rotateZ(5deg) translateX(-40px) translateY(-20px)',
                                             zIndex: 1,
                                         }}
-                                    />
+                                    >
+                                        <img src={originalUrl + "/content/mockups/dashboard-secondary.png"} className="w-full h-full object-cover opacity-60" alt="Secondary Screen" />
+                                    </div>
 
                                     {/* Layered Isometric Screen 2 (Front Dashboard) */}
                                     <div 

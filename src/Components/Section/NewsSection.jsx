@@ -16,7 +16,7 @@ const NewsSection = () => {
                   <h2 className='mb-0'>Updates & Insights</h2>
                 </Col>
                 <Col md={5} className='flex justify-between flex-column align-items-end'>
-                  <a href="/blog" className="btn-link mt-3">
+                  <a href="#!" className="btn-link mt-3">
                     <span>More News</span>
                     <svg
                       width="24"
@@ -41,7 +41,7 @@ const NewsSection = () => {
               <Row className='gap-y-4'>
                 <Col md={6} lg={4}>
                   <div className="blog-card">
-                    <img src={originalUrl + "/images/img (2).png"} className='w-full object-cover rounded-[8px]' alt="" />
+                    <img src={originalUrl + "/blog/digital_convenience.png"} className='w-full object-cover rounded-[8px]' alt="" />
                     <div className="p-3 lg:p-4">
                       <h5 className='mb-3'>30 Days to Go: Shamadhan Pay Launches Soon</h5>
                       <p className='mb-3 clamp-2'>
@@ -52,7 +52,7 @@ const NewsSection = () => {
                 </Col>
                 <Col md={6} lg={4}>
                   <div className="blog-card">
-                    <img src={originalUrl + "/images/img (3).png"} className='w-full object-cover rounded-[8px]' alt="" />
+                    <img src={originalUrl + "/blog/security_speed.png"} className='w-full object-cover rounded-[8px]' alt="" />
                     <div className="p-3 lg:p-4">
                       <h5 className='mb-3'>Grameen Telecom Backs Shamadhan Pay</h5>
                       <p className='mb-3 clamp-2'>
@@ -63,7 +63,7 @@ const NewsSection = () => {
                 </Col>
                 <Col md={6} lg={4}>
                   <div className="blog-card">
-                    <img src={originalUrl + "/images/img (1).png"} className='w-full object-cover rounded-[8px]' alt="" />
+                    <img src={originalUrl + "/blog/new_features.png"} className='w-full object-cover rounded-[8px]' alt="" />
                     <div className="p-3 lg:p-4">
                       <h5 className='mb-3'>Bill Pay, QR Scan, and More — What’s Inside the App</h5>
                       <p className='mb-3 clamp-2'>

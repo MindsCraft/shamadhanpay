@@ -13,7 +13,12 @@ module.exports = {
       InterTight: ["Inter Tight", "sans-serif"],
     },
     colors: {
-      ...colors,
+      ...Object.fromEntries(
+        Object.entries(colors).filter(
+          ([key]) =>
+            !["lightBlue", "warmGray", "trueGray", "coolGray", "blueGray"].includes(key)
+        )
+      ),
       transparent: "transparent",
       Mbaseblack: "#000000",
       Mbasewhite: "#ffffff",

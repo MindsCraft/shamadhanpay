@@ -9,13 +9,13 @@ const FAQSection = () => {
           <div className="w-full lg:px-4 xl:px-[2.5rem] py-[4rem] lg:py-[8rem] bg-bg-grey-2">
             <Container>
               <Row className='gap-y-4'>
-                <Col md={5}>
+                <Col md={5} className='lg:pr-16'>
                   <h2 className='mb-[2rem] md:mb-[3rem]'>Do you need ⎯ <br />
                     some help?</h2>
                   <div className="w-full bg-Mneutral900 p-6 rounded-[24px]">
                     <h5 className='text-white mb-[2.5rem]'>Didn't find the answer you were looking for? Our support team is here to help!</h5>
-                    <Link href="/download" className='inline-block rounded-md transition-all duration-300 px-6 py-3 bg-[#ffff] hover:bg-[#F3F4F6]' style={{ boxShadow: '0 4px 16px 0 rgba(99, 115, 173, 0.25)' }}>
-                      <p className="flex items-center gap-2">
+                    <Link href="#!" className='inline-block rounded-md transition-all duration-300 px-6 py-3 bg-[#ffff] hover:bg-[#F3F4F6]' style={{ boxShadow: '0 4px 16px 0 rgba(99, 115, 173, 0.25)' }}>
+                      <p className="flex items-center gap-2 mb-0">
                         <span className='font-semibold'>Contact Us?</span>
                       </p>
                     </Link>
